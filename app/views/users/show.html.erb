@@ -1,4 +1,12 @@
 <% @users.each do |user| %>
-<h2>開始日</h2>
-  <p><%= l user.created_at %></p>
+    <p><%= user.icon %></p>
+    <p><%= user.name %></p>
+  <h2>開始日</h2>
+    <p><%= l user.created_at %></p>
+  <h2>節約した金額</h2>
+    <p><%= user.cost %>円</p> 
+  <h2>お菓子を辞めたい理由</h2>
+    <p><%= user.motivation %></p> 
+  <h2>お菓子を辞めれた時のイメージ画像</h2>
+    <p><%= user.goal_image %></p> 
 <% end %>
