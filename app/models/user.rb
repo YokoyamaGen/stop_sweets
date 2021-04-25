@@ -11,4 +11,8 @@ class User < ApplicationRecord
   def calc_save_money(use_days)
     self.cost * use_days
   end
+
+  def calc_stop_day
+    self.calc_use_day - self.eat_day
+  end
 end
