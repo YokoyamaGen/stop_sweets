@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_24_034421) do
+ActiveRecord::Schema.define(version: 2021_04_26_141102) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2021_04_24_034421) do
     t.string "goal_image"
     t.text "motivation"
     t.integer "eat_day", default: 0
+    t.date "eat_day_updated_on", default: "2021-04-26", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -1,7 +1,11 @@
+<%= render partial: 'layouts/flash' %>
+<%= button_to 'お菓子を食べた', update_eat_day_users_path, method: :patch %>
 <p><%= @user.icon %></p>
 <p><%= @user.name %></p>
 <h2>開始日</h2>
   <p><%= l @user.created_at %></p>
+<h2>お菓子を辞めてきた日数</h2>
+  <p><%= @stop_eat_sweets_day %>日</p>
 <h2>節約した金額</h2>
   <p><%= @save_money %>円</p> 
 <h2>お菓子を辞めたい理由</h2>
