@@ -10,7 +10,12 @@ class UsersController < ApplicationController
 
   def update_eat_day
     user = User.find(current_user.id)
-    user.update!(eat_day: user.eat_day + 1) if user.calc_stop_day > 0
+
+    if user.eat_day_updated_on != Date.today && user.calc_stop_day > 0
+      user.update!(eat_day: user.eat_day + 1, eat_day_updated_on: Date.today)
+    else
+      flash[:alert] = "本日はこれ以上、申告できません"
+    end
     redirect_back(fallback_location: users_path)
   end
 end
