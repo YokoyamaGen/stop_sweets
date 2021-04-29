@@ -1,0 +1,15 @@
+<%= form_with model: @user do |f| %>
+  <div class="form_group">
+    <%= f.label :name, "名前" %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="form_group">
+    <%= f.label :email, "メールアドレス" %>
+    <%= f.email_field :email %>
+  </div>
+  <div class="form_group">
+    <%= f.label :cost, "1日のお菓子にかかっている費用" %>
+    <%= f.number_field :cost %>
+  </div>
+  <%= f.submit "保存", data: { confirm: "更新しますか？"} %>
+<% end %>

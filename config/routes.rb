@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
-  root to: 'tops#index'
-  resource :users, only: :show do
-    collection do
-      patch :update_eat_day
-    end
-  end
   devise_for :users
+  root to: 'tops#index'
+  resources :users do
+    patch :update_eat_day, on: :member
+  end 
 end
