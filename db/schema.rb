@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_26_141102) do
+ActiveRecord::Schema.define(version: 2021_05_01_083731) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2021_04_26_141102) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "name", default: "", null: false
     t.integer "cost", default: 0
-    t.string "icon"
+    t.string "image"
     t.string "goal_image"
     t.text "motivation"
     t.integer "eat_day", default: 0
