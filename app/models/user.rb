@@ -17,4 +17,11 @@ class User < ApplicationRecord
   def calc_stop_day
     self.calc_use_day - self.eat_day
   end
+
+  def self.guest
+    find_or_create_by!(email: "guest@example.com") do |user|
+      user.password = SecureRandom.urlsafe_base64
+      user.name = "ゲストユーザ"
+    end
+  end
 end

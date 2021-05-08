@@ -23,4 +23,6 @@
   </div>
 <% end %>
 
+<%= button_to "ゲストログイン", {controller: 'users/sessions', action: 'guest_sign_in'}, {method: :post} %>
+
 <%= render "devise/shared/links" %>
