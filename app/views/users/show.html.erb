@@ -13,10 +13,6 @@
   <p><%= @stop_eat_sweets_day %>日</p>
 <h2>節約した金額</h2>
   <p><%= @save_money %>円</p> 
-<h2>お菓子を辞めたい理由</h2>
-  <p><%= @user.motivation %></p> 
-<h2>お菓子を辞めれた時のイメージ画像</h2>
-  <p><%= @user.goal_image %></p>
 
 <%= button_to '編集', edit_user_registration_path, {method: :get}  %>
 
