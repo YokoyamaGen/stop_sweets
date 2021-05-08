@@ -1,4 +1,8 @@
 class User < ApplicationRecord
+  validates :name, presence: true, length: { maximum: 50 }
+  validates :email, length: { maximum: 255 }
+  validates :cost, numericality: { greater_than_or_equal_to: 0 }
+  
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
