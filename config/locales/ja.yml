@@ -2,3 +2,10 @@ ja:
   time:
     formats:
       default: "%Y/%m/%d"
+  activerecord:
+    models:
+      post: 投稿
+    attributes:
+      post:
+        content: 投稿
+        user: ユーザー
