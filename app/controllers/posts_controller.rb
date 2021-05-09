@@ -11,12 +11,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    post = current_user.posts.new(post_params)
-    if post.save
-      redirect_to posts_path
-    else
-      render :new
-    end
+    @post = current_user.posts.new(post_params)
+    (@post.save) ? (redirect_to posts_path) : (render :new)
   end
 
   def show
@@ -27,16 +23,11 @@ class PostsController < ApplicationController
   end
 
   def update
-    if @post.update(post_params)
-      redirect_to @post
-    else
-      render :edit
-    end
+    (@post.update(post_params)) ? (redirect_to posts_path) : (render :edit)
   end
 
   def destroy
-    @post.destroy!
-    redirect_to posts_path
+    (@post.destroy) ? (redirect_to posts_path) : (render :index)
   end
 
   private
