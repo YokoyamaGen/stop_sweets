@@ -5,7 +5,11 @@ ja:
   activerecord:
     models:
       post: 投稿
+      like: いいね
     attributes:
       post:
         content: 投稿
         user: ユーザー
+      like:
+        user: ユーザー
+        post: 投稿
