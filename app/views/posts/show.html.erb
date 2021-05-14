@@ -2,6 +2,13 @@
 <p>【名前】 <%= @post.user.name %></p>
 <p>【内容】 <%= @post.content %></p>
 <p>【作成日】 <%= l @post.created_at %></p>
+<p id="post-<%= @post.id %>">
+  <% if @post.liked_by?(current_user) %>
+    <%= render "like", post: @post %>
+  <% else %>
+    <%= render "dislike", post: @post %>
+  <% end %>
+</p>
 <% if current_user.id == @post.user_id %>
   <p>
     <%= link_to "編集", edit_post_path(@post) %>

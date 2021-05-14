@@ -4,6 +4,8 @@ class User < ApplicationRecord
   validates :cost, numericality: { greater_than_or_equal_to: 0 }
 
   has_many :posts, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :liked_posts, through: :likes, source: :post
   
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
