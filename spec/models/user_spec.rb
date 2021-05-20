@@ -60,26 +60,52 @@ RSpec.describe User, type: :model do
     end
   end
 
-  subject { user.destroy }
-  let(:user) { create(:user) }
-  context "ユーザーが削除されたとき" do
-    before do
-      create_list(:post, 2, user: user)
-      create(:post)
+  describe "インスタンスメソッド" do
+    context "calc_use_day のデータが条件を満たすとき" do
+      let(:user) { build(:user, created_at: Date.current - 1) }
+      it "ユーザのサービス利用日数が想定通りになる" do
+          expect(user.calc_use_day).to eq 1
+      end
     end
-    it "そのユーザーのメッセージも削除される" do
-      expect { subject }.to change { user.posts.count }.by(-2)
+    context "calc_save_money(use_days) のデータが条件を満たすとき" do
+      let(:user) { build(:user, cost: 500) }
+      it "お菓子を辞めたことによる節約金額が想定通りになる" do
+          expect(user.calc_save_money(2)).to eq 1000
+      end
+    end
+    context "calc_stop_day のデータが条件を満たすとき" do
+      let(:user) { build(:user, created_at: Date.current - 2, eat_day:1) }
+      it "お菓子を辞めた合計日数から食べてしまった日数を差し引いた日数が想定通りになる" do
+          expect(user.calc_stop_day).to eq 1
+      end
     end
   end
 
-  context "ユーザーが削除されたとき" do
-    before do
-      create_list(:like, 2, user: user)
-      create(:like)
+  describe "クラスメソッド" do
+    context "クラスメソッドguestを呼び出したとき" do
+      it "User.guest.name がゲストユーザになること" do
+        expect(User.guest.name).to eq "ゲストユーザ"
+      end
+      it "User.guest.email がguest@example.comになること" do
+        expect(User.guest.email).to eq "guest@example.com"
+      end
     end
+  end
 
-    it "そのユーザーのいいねも削除される" do
-      expect { subject }.to change { user.likes.count }.by(-2)
+  describe "アソシエーション" do
+    subject { user.destroy }
+    let(:user) { create(:user) }
+    context "ユーザーが削除されたとき" do
+      it "削除されたユーザーのメッセージも削除される" do
+        create_list(:post, 2, user: user)
+        create(:post)
+        expect { subject }.to change { user.posts.count }.by(-2)
+      end
+      it "削除されたユーザーのいいねも削除される" do
+        create_list(:like, 2, user: user)
+        create(:like)
+        expect { subject }.to change { user.likes.count }.by(-2)
+      end
     end
   end
 end

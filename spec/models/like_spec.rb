@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Like, type: :model do
-  describe "バリデーションのチェック" do
+  describe "バリデーション" do
     subject { like.valid? }
 
       context "データが条件を満たすとき" do
