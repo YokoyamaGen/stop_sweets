@@ -8,20 +8,6 @@ class UsersController < ApplicationController
     @stop_eat_sweets_day = @user.calc_stop_day
   end
 
-  def edit
-    @user = User.find(params[:id])
-  end
-
-  def update
-    @user = User.find(params[:id])
-    if @user.update(user_params)
-      redirect_to user_path(@user)
-    else
-      flash.now[:alert] = "入力に不備があります。"
-      render :edit
-    end
-  end
-
   def update_eat_day
     @user = User.find(params[:id])
 
@@ -32,11 +18,4 @@ class UsersController < ApplicationController
     end
     redirect_back(fallback_location: user_path(@user))
   end
-
-  private
-
-  def user_params
-    params.require(:user).permit(:image, :name, :email, :cost, :remove_image)
-  end
-
 end

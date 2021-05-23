@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   root to: 'tops#index'
   
-  resources :users do
+  resources :users, only: [:show] do
     patch :update_eat_day, on: :member
   end 
 
