@@ -203,7 +203,6 @@ RSpec.describe "Posts", type: :request do
     end
   end
   describe  "Not Logged in" do
-
     describe "GET #new" do
       subject { get(new_post_path) }
 
