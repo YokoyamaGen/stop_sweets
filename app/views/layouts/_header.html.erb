@@ -1,0 +1,37 @@
+<nav class="navbar navbar-dark bg-faded mb-3" style="background-color: #000044; height: 60px;">
+  <%# ハンバーガーボタン %>
+  <button type="button" class="drawer-toggle drawer-hamburger">
+    <span class="sr-only">toggle navigation</span>
+    <span class="drawer-hamburger-icon"></span>
+  </button>
+  <%# ナビゲーションの中身 %>
+  <nav class="drawer-nav" role="navigation">
+    <ul class="drawer-menu">
+      <% if user_signed_in? %>
+        <%# ログイン時 %>
+        <div class="nav-header">
+          <%=link_to("", user_path(current_user), class: "fa fa-user-circle menu-icon link_under_none_white", 'aria-hidden': true)%>
+          <div class="nav-username">
+            <%=link_to(current_user.name, user_path(current_user), class: "link_under_none_white")%>
+          </div>
+        </div>
+        <li><%=link_to("ホーム", root_path, class: "drawer-menu-item fa fa-home", 'aria-hidden': true)%></li> 
+        <li><%=link_to("マイページ", user_path(current_user), class: "drawer-menu-item fa fa-address-card", 'aria-hidden': true)%></li> 
+        <li><%=link_to("ログアウト", destroy_user_session_path, method: :delete, class: "drawer-menu-item fa fa-sign-out", 'aria-hidden': true)%></li> 
+      <% else %>
+        <%# 非ログイン時 %>
+        <div class="nav-header">
+          <%=link_to("", new_user_session_path, class: "fa fa-user-circle menu-icon link_under_none_white", 'aria-hidden': true)%>
+          <div class="nav-username">
+            <%=link_to("ゲストさん", new_user_session_path, class: "link_under_none_white")%>
+          </div>
+        </div>
+        <li><%=link_to("ホーム", root_path, class: "drawer-menu-item fa fa-home", 'aria-hidden': true)%></li> 
+        <li><%=link_to("ログイン", new_user_session_path, class: "drawer-menu-item fa fa-sign-in", 'aria-hidden': true)%></li>
+        <li><%=link_to("アカウント登録", new_user_registration_path, class: "drawer-menu-item fa fa-user-plus", 'aria-hidden': true)%></li>  
+        <li><%=link_to("ゲストログイン（閲覧用）", users_guest_sign_in_path, method: :post, class: "drawer-menu-item")%></li>        
+      <% end %>  
+    </ul>
+  </nav>
+</nav>
+

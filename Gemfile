@@ -41,6 +41,8 @@ gem 'carrierwave', '~> 2.0'
 # 画像ファイルの加工
 gem 'mini_magick'
 
+gem 'font-awesome-rails'
+
 group :development, :test do
   # Rails用のテストフレームワーク
   gem 'rspec-rails'
