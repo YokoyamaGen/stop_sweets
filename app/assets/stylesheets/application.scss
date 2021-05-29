@@ -1,3 +1,54 @@
 @import "users";
 @import "bootstrap/scss/bootstrap";
- 
+@import "font-awesome";
+
+.drawer-hamburger-icon,
+.drawer-hamburger-icon:after,
+.drawer-hamburger-icon:before {
+  background-color: #FFF !important;
+}
+
+.drawer-nav {
+  background-color:#000044 !important;
+}
+
+.drawer-menu-item {
+  color:#FFF !important;
+  margin: 10px 25px;
+}
+
+.menu-icon {
+  color: #fff;
+  margin: 30px 30px 2px 30px;
+}
+
+.menu-icon {
+    font-size: 3em;
+}
+
+.nav-header {
+    height: 100px;
+    margin: 20px;
+}
+
+.link_under_none_white {
+    text-decoration: none !important;
+    color: #fff;
+}
+
+.nav-username {
+    margin: auto auto 10px 25px;
+}
+
+header {
+    padding: 10px;
+    background: #000044;
+}
+
+.drawer-hamburger {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+    margin: 10px;
+}
