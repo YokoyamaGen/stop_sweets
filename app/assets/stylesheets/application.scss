@@ -2,6 +2,7 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome";
 
+// ナビバー
 .drawer-hamburger-icon,
 .drawer-hamburger-icon:after,
 .drawer-hamburger-icon:before {
@@ -50,5 +51,54 @@ header {
     width: 40px;
     height: 40px;
     vertical-align: middle;
-    margin: 10px;
+    margin: 5px;
+}
+
+.navbar-brand {
+    font-size: 30px;
+    font-family: arial black;
+}
+
+// ログイン画面、アカウント登録、ユーザ情報編集
+.btn-info {
+    display: inline-block;
+    border-radius: 30px;
+    background-color: #FFA500;
+    border: none;
+    text-align: center;
+    margin: 15px 15px 5px auto;
+}
+
+.signup-form {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-style, .form-title {
+    border: solid 1px #ccc;
+    padding: 10px;
+    border-top: solid 2px #000044;
+}
+
+.form-style {
+    margin-top: 30px;
+    box-shadow: 0 2px 2px 0 gray;
+    padding: 0px;
+}
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.form-style .form-content {
+    border: solid 1px #ccc;
+    padding: 30px;
+}
+
+.actions {
+  margin-bottom: 20px;
 }

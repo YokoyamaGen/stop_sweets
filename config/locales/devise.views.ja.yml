@@ -27,6 +27,7 @@ ja:
         updated_at: 更新日
         name: ユーザ名
         cost: １日のお菓子にかかっている費用
+        image: プロフィール画像
     models:
       user: ユーザ
   devise:

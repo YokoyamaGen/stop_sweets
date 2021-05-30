@@ -12,3 +12,4 @@ import "bootstrap/dist/js/bootstrap"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+require("bootstrap/dist/js/bootstrap")
