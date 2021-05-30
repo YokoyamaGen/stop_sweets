@@ -30,8 +30,11 @@
         <li><%=link_to("ログイン", new_user_session_path, class: "drawer-menu-item fa fa-sign-in", 'aria-hidden': true)%></li>
         <li><%=link_to("アカウント登録", new_user_registration_path, class: "drawer-menu-item fa fa-user-plus", 'aria-hidden': true)%></li>  
         <li><%=link_to("ゲストログイン（閲覧用）", users_guest_sign_in_path, method: :post, class: "drawer-menu-item")%></li>        
-      <% end %>  
+      <% end %> 
     </ul>
   </nav>
+  <ul class="navbar-nav ml-auto main-nav align-items-right">
+    <a class="nav navbar-brand" href="/">Stop Sweets</a>
+  </ul>
 </nav>
 

@@ -2,6 +2,7 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome";
 
+// ナビバー
 .drawer-hamburger-icon,
 .drawer-hamburger-icon:after,
 .drawer-hamburger-icon:before {
@@ -51,6 +52,11 @@ header {
     height: 40px;
     vertical-align: middle;
     margin: 10px;
+}
+
+.navbar-brand {
+    font-size: 30px;
+    font-family: arial black;
 }
 
 // ログイン画面
