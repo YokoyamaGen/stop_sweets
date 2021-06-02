@@ -1,19 +1,50 @@
-<%= button_to 'お菓子を食べた', update_eat_day_user_path(@user), method: :patch %>
-<% if @user.image? %>
-  <%= image_tag @user.image.url, class: "show_image" %>
-<% else %>
-  <%= image_tag 'no-image.png', class: "show_image" %>
-<% end %>
-<p><%= @user.name %></p>
-<h2>メールアドレス</h2>
-<p><%= @user.email %></p>
-<h2>開始日</h2>
-  <p><%= l @user.created_at %></p>
-<h2>お菓子を辞めてきた日数</h2>
-  <p><%= @stop_eat_sweets_day %>日</p>
-<h2>節約した金額</h2>
-  <p><%= @save_money %>円</p> 
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 signup-form">
+      <div class="report-button">
+        <%=link_to("お菓子を食べた", update_eat_day_user_path(@user), method: :patch, class: "btn btn-primary")%>
+      </div>
+      <div class="user-image">
+        <div class="image-circle">
+          <% if @user.image? %>
+            <%= image_tag @user.image.url, class: "show-image" %>
+          <% else %>
+            <%= image_tag 'no-image.png', class: "show-image" %>
+          <% end %>
+        </div>
+      </div>
+      <div class="user-name-info">
+        <h4><strong><%= @user.name %></strong></h4>
+      </div>
+      <div class="user-other-info">
+        <strong>メールアドレス</strong>
+      </div>
+      <div class="user-data">
+        <%= @user.email %>
+      </div>
+      <div class="user-other-info">
+        <strong>サービス利用開始日</strong>
+      </div>
+      <div class="user-data">
+        <%= l @user.created_at %>
+      </div>
+      <div class="user-other-info">
+        <strong>お菓子を辞めてきた日数</strong>
+      </div>
+      <div class="user-data">
+        <%= @stop_eat_sweets_day %>日
+      </div>
+      <div class="user-other-info">
+        <strong>節約した金額</strong>
+      </div>
+      <div class="user-data">
+        <%= @save_money %>円
+      </div>
+      <div class="mypage-button-info">
+        <%=link_to("編集", edit_user_registration_path, class: "btn btn-info mypage-button")%>
+        <%=link_to("削除", user_registration_path, method: :delete, class: "btn btn-info mypage-button", data: { confirm: '本当に削除しますか？' } )%>
+      </div>
+    </div>
+  </div>
+</div>
 
-<%= button_to '編集', edit_user_registration_path, {method: :get}  %>
-
-<%= button_to '削除', user_registration_path, {method: :delete, data: { confirm: '本当に削除しますか？' } } %>
