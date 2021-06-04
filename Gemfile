@@ -43,6 +43,8 @@ gem 'mini_magick'
 
 gem 'font-awesome-rails'
 
+gem 'kaminari'
+
 group :development, :test do
   # Rails用のテストフレームワーク
   gem 'rspec-rails'

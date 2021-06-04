@@ -16,6 +16,7 @@
 .drawer-menu-item {
   color:#FFF !important;
   margin: 10px 25px;
+  font-size: 18px !important;
 }
 
 .menu-icon {
@@ -39,6 +40,8 @@
 
 .nav-username {
     margin: auto auto 10px 25px;
+    font-size:18px;
+    margin-top: 5px;
 }
 
 header {
@@ -56,6 +59,12 @@ header {
 .navbar-brand {
     font-size: 30px;
     font-family: arial black;
+}
+
+.fa {
+  font-weight:400;
+  display: inline-block !important;
+  line-height:1;
 }
 
 // ログイン画面、アカウント登録、ユーザ情報編集

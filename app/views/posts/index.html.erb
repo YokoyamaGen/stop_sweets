@@ -1,3 +1,4 @@
-<h1>投稿一覧画面</h1>
-<%= link_to "投稿", new_post_path %>
+<%= link_to "つぶやく", new_post_path %>
+<%= paginate @posts %>
 <%= render @posts %>
+<%= paginate @posts %>
