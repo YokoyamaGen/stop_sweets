@@ -13,3 +13,6 @@ ja:
       like:
         user: ユーザー
         post: 投稿
+  helpers:
+    submit:
+      create: 投稿する

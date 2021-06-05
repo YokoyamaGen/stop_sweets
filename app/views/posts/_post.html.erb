@@ -1,25 +1,36 @@
-<div>
+<div class="post-content">
   <% if post.user.image? %>
     <%= image_tag post.user.image.url, class: "show_image" %>
   <% else %>
     <%= image_tag 'no-image.png', class: "show_image" %>
   <% end %>
 
-  <p><%= post.user.name %></p>
-  <p><%= post.content %></p>
-  <p id="post-<%= post.id %>">
-    <% if post.liked_by?(current_user) %>
-      <%= render "like", post: post %>
-    <% else %>
-      <%= render "dislike", post: post %>
-    <% end %>
-  </p>
-  <p>
-    <%= link_to "詳細", post %>
-    <% if current_user.id == post.user_id %>
-      <%= link_to "編集", edit_post_path(post) %>
-      <%= link_to "削除", post_path(post), method: :delete, data: { confirm: "削除しますか？" } %>
-    <% end %>  
-  </p>
+  <strong class="user-name">
+    <%= link_to post.user.name, user_path(post.user), class:"link_under_none" %>
+  </strong>
+  <div class="dropdown">
+    <button class="btn fa fa-ellipsis-v" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <%= link_to "詳細", post, class:"dropdown-item" %>
+      <% if current_user.id == post.user_id %>
+        <div class="dropdown-divider"></div>
+        <%= link_to "編集", edit_post_path(post), class:"dropdown-item" %>
+        <div class="dropdown-divider"></div>
+        <%= link_to "削除", post_path(post), method: :delete, data: { confirm: "削除しますか？" }, class:"dropdown-item" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="content">
+    <p><%= post.content %></p>
+  </div>
+  <div class="post-icon">
+    <p id="post-<%= post.id %>">
+      <% if post.liked_by?(current_user) %>
+        <%= render "like", post: post %>
+      <% else %>
+        <%= render "dislike", post: post %>
+      <% end %>
+    </p>
+  </div>
 </div>
-<hr>
