@@ -1,4 +1,11 @@
-<%= link_to "つぶやく", new_post_path %>
-<%= paginate @posts %>
-<%= render @posts %>
-<%= paginate @posts %>
+<div class="container">
+  <div class="row">
+  <div class="col-lg-3"></div>
+    <div class="col-lg-6">
+      <%= paginate @posts %>
+      <%= link_to "つぶやく", new_post_path, class: "btn btn-primary btn-lg btn-block btn-twitter" %>
+      <%= render @posts %>
+      <%= paginate @posts %>
+    </div>
+  </div>
+</div>

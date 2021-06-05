@@ -17,6 +17,11 @@
   color:#FFF !important;
   margin: 10px 25px;
   font-size: 18px !important;
+  text-decoration: none !important;
+}
+
+.drawer-menu-item:hover {
+  color:#007bff !important;
 }
 
 .menu-icon {
@@ -25,40 +30,40 @@
 }
 
 .menu-icon {
-    font-size: 3em;
+  font-size: 3em;
 }
 
 .nav-header {
-    height: 100px;
-    margin: 20px;
+  height: 100px;
+  margin: 20px;
 }
 
 .link_under_none_white {
-    text-decoration: none !important;
-    color: #fff;
+  text-decoration: none !important;
+  color: #fff;
 }
 
 .nav-username {
-    margin: auto auto 10px 25px;
-    font-size:18px;
-    margin-top: 5px;
+  margin: auto auto 10px 25px;
+  font-size:18px;
+  margin-top: 5px;
 }
 
 header {
-    background: #000044;
+  background: #000044;
 }
 
 .drawer-hamburger {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    vertical-align: middle;
-    margin: 5px;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+  margin: 5px;
 }
 
 .navbar-brand {
-    font-size: 30px;
-    font-family: arial black;
+  font-size: 30px;
+  font-family: arial black;
 }
 
 .fa {
@@ -69,43 +74,43 @@ header {
 
 // ログイン画面、アカウント登録、ユーザ情報編集
 .btn-info {
-    display: inline-block;
-    border-radius: 30px;
-    background-color: #FFA500;
-    border: none;
-    text-align: center;
-    margin: 15px 15px 5px auto;
-    box-shadow: 0 2px 2px 0 rgb(0, 0, 0)
+  display: inline-block;
+  border-radius: 30px;
+  background-color: #FFA500;
+  border: none;
+  text-align: center;
+  margin: 15px 15px 5px auto;
+  box-shadow: 0 2px 2px 0 rgb(0, 0, 0)
 }
 
 .signup-form {
-    margin-left: auto;
-    margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .form-style, .form-title {
-    border: solid 1px #ccc;
-    padding: 10px;
-    border-top: solid 2px #000044;
+  border: solid 1px #ccc;
+  padding: 10px;
+  border-top: solid 2px #000044;
 }
 
 .form-style {
-    margin-top: 30px;
-    box-shadow: 0 2px 2px 0 gray;
-    padding: 0px;
+  margin-top: 30px;
+  box-shadow: 0 2px 2px 0 gray;
+  padding: 0px;
 }
 
 .container {
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .form-style .form-content {
-    border: solid 1px #ccc;
-    padding: 30px;
+  border: solid 1px #ccc;
+  padding: 30px;
 }
 
 .actions {
@@ -165,11 +170,14 @@ header {
   border-radius: 30px;
   background-color: #000044;
   border: none;
+  box-shadow: 0 2px 2px 0 rgb(0, 0, 0)
+}
+
+.btn-report {
   margin-top: 15px;
   position:absolute;
   top: 10px;
   right: 0px;
-  box-shadow: 0 2px 2px 0 rgb(0, 0, 0)
 }
 
 .user-name-info {
@@ -198,4 +206,70 @@ header {
 
 .flash-style {
   margin-top: 30px;
+}
+
+// 投稿画面
+
+.btn-twitter {
+  margin: 15px 15px 30px auto;
+}
+
+.pagination {
+  margin-top:20px;
+  justify-content: center;
+}
+
+.page-link {
+  color: #FFA500;
+}
+
+.page-item.active .page-link {
+  background-color:#000044 !important;
+}
+
+.post-content {
+  border: dotted 1px silver;
+  height: 250px;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.user-name {
+  font-size: 1.5em;
+  margin-left: 10px;
+}
+
+.link_under_none {
+  text-decoration: none !important;
+  color: #FFA500;
+}
+
+.content {
+  margin: 0px auto;
+  width: 60%;
+  text-overflow: ellipsis;
+  height: 70px;
+}
+
+.post-icon {
+  text-align: right;
+}
+
+.dislike-info {
+  color:#CCC;
+  text-decoration: none !important;
+}
+
+.like-info {
+  color:#FFA500;
+  text-decoration: none !important;
+}
+
+.dropdown-item {
+  color:#FFA500;  
+}
+
+.dropdown {
+  float: right;
+  display: inline;
 }
