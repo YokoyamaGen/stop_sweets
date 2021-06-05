@@ -298,3 +298,27 @@ header {
   margin: 15px 15px 5px auto;
   box-shadow: 0 2px 2px 0 rgb(0, 0, 0) 
 }
+
+table {
+  border-collapse:collapse;
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529;
+  // border-top: solid 4px #000044;
+}
+
+.post-detail {
+  // margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+th,td {
+  border: 1px solid #dee2e6;;
+  padding: 1rem;
+}
+
+.post-title {
+  margin-top: 50px;
+  border-top: solid 4px #000044;
+  padding: 1rem;
+}
