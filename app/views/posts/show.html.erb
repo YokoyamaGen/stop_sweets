@@ -26,6 +26,8 @@
           <%= render "dislike", post: @post %>
         <% end %>
       </p>
+      <span class="fa fa-comment fa-lg comment-style"></span>
+      <%= @post.comments_count %>
       <% if current_user.id == @post.user_id %>
         <%= link_to("編集", edit_post_path(@post),  class: "btn btn-info btn-lg btn-block btn-back") %>
         <%= link_to("削除", post_path(@post), method: :delete, data: { confirm: "削除しますか？" },  class: "btn btn-info btn-lg btn-block btn-back") %>

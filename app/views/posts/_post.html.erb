@@ -25,12 +25,16 @@
     <p><%= post.content %></p>
   </div>
   <div class="post-icon">
-    <p id="post-<%= post.id %>">
+    <span id="post-<%= post.id %>">
       <% if post.liked_by?(current_user) %>
         <%= render "like", post: post %>
       <% else %>
         <%= render "dislike", post: post %>
       <% end %>
-    </p>
+    </span>
+  </div>
+  <div class="comment-icon">
+    <%= link_to "", post, class:"fa fa-comment fa-lg comment-style" %>
+    <%= post.comments_count %>
   </div>
 </div>
