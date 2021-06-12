@@ -70,19 +70,6 @@
           </div>
         </div>
       <% end %>
-
-<%
-=begin
-%>
-      <div>
-        <%= form_with model: [@post, @comment], local:true do |f| %>
-          <%= f.text_area :content %>
-          <%= f.submit %>
-        <% end %>
-      </div>
-<%
-=end
-%>
       <%= link_to("戻る", posts_path,  class: "btn btn-secondary btn-lg btn-block btn-back") %>
   </div>
-</div>      
+</div>
