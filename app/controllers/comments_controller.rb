@@ -1,10 +1,19 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
 
+  def new
+    @post = Post.find(params[:post_id])
+    @comment = Comment.new
+  end
+
   def create
-    comment = current_user.comments.new(post_id: params[:post_id], content: comment_params["content"])
-    (comment.save) ? (flash[:notice] = "コメントに成功しました") : (flash[:alert] = "コメントに失敗しました")      
-    redirect_back(fallback_location: post_path(params[:post_id]))
+    @comment = current_user.comments.new(post_id: params[:post_id], content: comment_params["content"])
+    if @comment.save
+      redirect_to post_path(params[:post_id])
+    else
+      @post = Post.find(params[:post_id])
+      render :new
+    end
   end
 
   def edit
