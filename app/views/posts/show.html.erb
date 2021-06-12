@@ -1,36 +1,75 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-3"></div>
-    <div class="col-md-6">
-      <div class="form-title post-title">
-        <h6><strong>詳細</strong></h6>
-      </div>
-      <table class="post-detail">
-        <tr>
-          <th>名前</th>
-          <td><%= @post.user.name %></td>
-        </tr>
-        <tr>
-          <th>内容</th>
-          <td><%= @post.content %></td>
-        </tr>
-        <tr>
-          <th>作成日</th>
-          <td><%= l @post.created_at %></td>
-        </tr>
-      </table>
-      <p id="post-<%= @post.id %>">
-        <% if @post.liked_by?(current_user) %>
-          <%= render "like", post: @post %>
+  <div class="col-lg-3"></div>
+    <div class="col-lg-6">
+      <%= link_to "コメントする", new_post_comments_path(@post), class: "btn btn-primary btn-lg btn-block btn-twitter" %>
+      <div class="post-detail-content">
+        <% if @post.user.image? %>
+          <%= image_tag @post.user.image.url, class: "show_image" %>
         <% else %>
-          <%= render "dislike", post: @post %>
+          <%= image_tag 'no-image.png', class: "show_image" %>
         <% end %>
-      </p>
-      <% if current_user.id == @post.user_id %>
-        <%= link_to("編集", edit_post_path(@post),  class: "btn btn-info btn-lg btn-block btn-back") %>
-        <%= link_to("削除", post_path(@post), method: :delete, data: { confirm: "削除しますか？" },  class: "btn btn-info btn-lg btn-block btn-back") %>
+
+        <strong class="user-name">
+          <%= link_to @post.user.name, user_path(@post.user), class:"link_under_none" %>
+        </strong>
+        <div class="dropdown">
+          <button class="btn fa fa-ellipsis-v" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <% if current_user.id == @post.user_id %>
+              <%= link_to "編集", edit_post_path(@post), class:"dropdown-item" %>
+              <div class="dropdown-divider"></div>
+              <%= link_to "削除", post_path(@post), method: :delete, data: { confirm: "削除しますか？" }, class:"dropdown-item" %>
+            <% end %>
+          </div>
+        </div>
+        <div class="content">
+          <p><%= @post.content %></p>
+        </div>
+
+        <div class="post-icon">
+          <span id="post-<%= @post.id %>">
+            <% if @post.liked_by?(current_user) %>
+              <%= render "like", post: @post %>
+            <% else %>
+              <%= render "dislike", post: @post %>
+            <% end %>
+          </span>
+        </div>
+        <div class="comment-icon">
+          <span class="fa fa-comment fa-lg comment-style"></span>
+          <%= @post.comments_count %>
+        </div>
+      </div>
+
+      <% @post.comments.each do |comment|%>
+        <div class="post-detail-content">
+          <% if comment.user.image? %>
+            <%= image_tag comment.user.image.url, class: "show_image" %>
+          <% else %>
+            <%= image_tag 'no-image.png', class: "show_image" %>
+          <% end %>
+
+          <strong class="user-name">
+            <%= link_to comment.user.name, user_path(comment.user), class:"link_under_none" %>
+          </strong>
+          <% if current_user.id == comment.user_id %>
+            <div class="dropdown">
+              <button class="btn fa fa-ellipsis-v" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <%= link_to "編集", edit_post_comment_path(comment), class:"dropdown-item" %>
+                <div class="dropdown-divider"></div>
+                <%= link_to "削除", post_comment_path(comment), method: :delete, data: { confirm: "削除しますか？" }, class:"dropdown-item" %>
+              </div>
+            </div>
+          <% end %>
+          <div class="content">
+            <p><%= comment.content %></p>
+          </div>
+        </div>
       <% end %>
       <%= link_to("戻る", posts_path,  class: "btn btn-secondary btn-lg btn-block btn-back") %>
-    </div>
   </div>
 </div>

@@ -12,7 +12,7 @@
     <button class="btn fa fa-ellipsis-v" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <%= link_to "詳細", post, class:"dropdown-item" %>
+      <%= link_to "詳細", post_path(post), class:"dropdown-item" %>
       <% if current_user.id == post.user_id %>
         <div class="dropdown-divider"></div>
         <%= link_to "編集", edit_post_path(post), class:"dropdown-item" %>
@@ -25,12 +25,16 @@
     <p><%= post.content %></p>
   </div>
   <div class="post-icon">
-    <p id="post-<%= post.id %>">
+    <span id="post-<%= post.id %>">
       <% if post.liked_by?(current_user) %>
         <%= render "like", post: post %>
       <% else %>
         <%= render "dislike", post: post %>
       <% end %>
-    </p>
+    </span>
+  </div>
+  <div class="comment-icon">
+    <%= link_to "", post_path(post), class:"fa fa-comment fa-lg comment-style" %>
+    <%= post.comments_count %>
   </div>
 </div>

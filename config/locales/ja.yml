@@ -6,6 +6,7 @@ ja:
     models:
       post: 投稿
       like: いいね
+      comment: コメント
     attributes:
       post:
         content: 投稿
@@ -13,6 +14,8 @@ ja:
       like:
         user: ユーザー
         post: 投稿
+      comment:
+        content: コメント
   helpers:
     submit:
       create: 投稿する

@@ -1,0 +1,4 @@
+<%= form_with model: [@post, @comment], local: true do |f| %>
+  <%= f.text_area :content, required: true, size:"20x10", class: "form-control" %><br>
+  <%= f.submit class: "btn btn-info btn-lg btn-block" %>
+<% end %>

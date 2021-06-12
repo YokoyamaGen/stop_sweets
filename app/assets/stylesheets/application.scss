@@ -252,7 +252,8 @@ header {
 }
 
 .post-icon {
-  text-align: right;
+  display: inline;
+  float:right
 }
 
 .dislike-info {
@@ -275,19 +276,19 @@ header {
 }
 
 .form-content {
-    border: solid 1px #ccc;
-    padding: 30px;
+  border: solid 1px #ccc;
+  padding: 30px;
 }
 
 .form-control {
-    display: block;
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #495057;
-    border: 1px solid #ced4da;
-    border-radius: 0.25rem;
+  display: block;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
 }
 
 .btn-back {
@@ -298,6 +299,19 @@ header {
   margin: 15px 15px 5px auto;
   box-shadow: 0 2px 2px 0 rgb(0, 0, 0) 
 }
+
+.comment-style {
+  color:#000044;
+  text-decoration: none !important;
+}
+
+.comment-icon {
+  display: inline;
+  float:right;
+  margin-right: 20px;
+}
+
+// 詳細画面
 
 table {
   border-collapse:collapse;
@@ -319,4 +333,10 @@ th,td {
   margin-top: 50px;
   border-top: solid 4px #000044;
   padding: 1rem;
+}
+
+.post-detail-content {
+  border: dotted 1px silver;
+  height: 250px;
+  padding: 10px;
 }

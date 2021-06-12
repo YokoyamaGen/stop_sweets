@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <div class="form-style">
+        <div class="form-title">
+          <h6><strong>コメント編集</strong></h6>
+        </div>
+        <div class="form-content">          
+          <%= render "devise/shared/error_messages", resource: @comment %>
+          <%= render "form" %>
+          <%= link_to("戻る", posts_path,  class: "btn btn-secondary btn-lg btn-block btn-back") %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
