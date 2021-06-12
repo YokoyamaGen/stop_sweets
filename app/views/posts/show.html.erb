@@ -60,7 +60,7 @@
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <%= link_to "編集", edit_post_comment_path(comment), class:"dropdown-item" %>
                 <div class="dropdown-divider"></div>
-                <%= link_to "削除", post_path(comment), method: :delete, data: { confirm: "削除しますか？" }, class:"dropdown-item" %>
+                <%= link_to "削除", post_comment_path(comment), method: :delete, data: { confirm: "削除しますか？" }, class:"dropdown-item" %>
               </div>
             </div>
           <% end %>
