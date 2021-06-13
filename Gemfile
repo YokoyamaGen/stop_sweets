@@ -45,6 +45,9 @@ gem 'font-awesome-rails'
 
 gem 'kaminari'
 
+# 検索機能
+gem 'ransack'
+
 group :development, :test do
   # Rails用のテストフレームワーク
   gem 'rspec-rails'
