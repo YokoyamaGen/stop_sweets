@@ -2,8 +2,12 @@ class PostsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_post, only: %i[edit update destroy]
 
+  # 1ページの表示数
+  PER_PAGE = 5
+
   def index
-    @posts = Post.includes(:user, :likes).order(created_at: "DESC").page(params[:page]).per(5)
+    @q = Post.ransack(params[:q])
+    @posts = @q.result.includes(:user, :likes).order(created_at: "DESC").page(params[:page]).per(PER_PAGE)
   end
 
   def new
