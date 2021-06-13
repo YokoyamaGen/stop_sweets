@@ -18,12 +18,14 @@
       <div class="user-name-info">
         <h4><strong><%= @user.name %></strong></h4>
       </div>
-      <div class="user-other-info">
-        <strong>メールアドレス</strong>
-      </div>
-      <div class="user-data">
-        <%= @user.email %>
-      </div>
+      <% if current_user.id == @user.id %>
+        <div class="user-other-info">
+          <strong>メールアドレス</strong>
+        </div>
+        <div class="user-data">
+          <%= @user.email %>
+        </div>
+      <% end %>  
       <div class="user-other-info">
         <strong>サービス利用開始日</strong>
       </div>
