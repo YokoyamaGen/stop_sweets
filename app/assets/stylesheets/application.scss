@@ -122,12 +122,8 @@ header {
 
 .image-circle {
   display: inline-block;
-  width: 150px;
-  height: 150px;
   border: 1px solid #ccc;
   border-radius: 50%;
-  background-size: 150px 150px;
-  background-color: #fff;
   overflow: hidden;
 }
 
@@ -143,6 +139,8 @@ header {
   vertical-align: middle;
   border-style: none;
   margin: 0px;
+  border: 2px solid #CCC;
+  background-color: #CCC;
 }
 
 .mypage-button-info {
@@ -309,15 +307,11 @@ table {
   width: 100%;
   margin-bottom: 1rem;
   color: #212529;
+  margin-top: 30px;
 }
 
 .post-detail {
   margin-bottom: 30px;
-}
-
-th,td {
-  border: 1px solid #dee2e6;;
-  padding: 1rem;
 }
 
 .post-title {
@@ -336,4 +330,33 @@ th,td {
 
 .search-form {
   margin-left: 60px;
+}
+
+// ランキング
+
+.show-user-image {
+  width: 80px;
+  height: 80px;
+  vertical-align: middle;
+  border-style: none;
+  margin: 0px;
+  object-fit:cover;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  margin-right:10px;
+  box-shadow: 0 2px 2px 0 black;
+  border: 2px solid #CCC;
+  background-color: #CCC;
+}
+
+td {
+  height: 150px;
+}
+
+.rank-info {
+  font-size: 40px;
+}
+
+.rank-info-continue {
+  font-size: 20px;
 }

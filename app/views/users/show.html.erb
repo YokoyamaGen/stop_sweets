@@ -33,16 +33,28 @@
         <%= l @user.created_at %>
       </div>
       <div class="user-other-info">
-        <strong>お菓子を辞めてきた日数</strong>
+        <strong>サービス利用開始からお菓子を辞めた日数</strong>
       </div>
       <div class="user-data">
         <%= @stop_eat_sweets_day %>日
       </div>
       <div class="user-other-info">
-        <strong>節約した金額</strong>
+        <strong>サービス利用開始から節約した金額</strong>
       </div>
       <div class="user-data">
         <%= @save_money %>円
+      </div>
+      <div class="user-other-info">
+        <strong>今月のお菓子を辞めた日数</strong>
+      </div>
+      <div class="user-data">
+        <%= @stop_eat_sweets_day_month %>日
+      </div>
+      <div class="user-other-info">
+        <strong>今月の節約した金額</strong>
+      </div>
+      <div class="user-data">
+        <%= @save_money_month %>円
       </div>
       <% if current_user.id == @user.id %>
         <div class="mypage-button-info">
