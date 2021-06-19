@@ -1,6 +1,15 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, :delete_eat_day_month
 
+  def index
+    users = User.all
+    rank_hash = Hash.new
+    users.each do |user|
+      rank_hash.merge!(user => user.calc_stop_day_month)
+    end
+    @rank_info = rank_hash.sort {|(k1, v1), (k2, v2)| v2 <=> v1 }.to_h.to_a
+  end
+
   def show
     @user = User.find(params[:id])
     use_days = @user.calc_use_day

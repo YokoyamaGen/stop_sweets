@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row">
+  <div class="col-lg-3"></div>
+    <div class="col-lg-7">
+      <table class="table">
+        <thead class="table-head text-white bg-dark">
+          <tr>
+            <th width= 20% class="text-center">順位</th>
+            <th width= 50%>ユーザー名</th>
+            <th width= 30% class="text-center">継続日数</th>
+          </tr>
+        </thead>
+        <tbody>          
+          <% rank_status = 1 %>
+          <% before_user_continue_day = 0 %>
+          <% @rank_info.each.with_index(1) do |rank, i| %>
+            <% if i == 1 || before_user_continue_day != rank[1] %>
+              <% rank_status = i %>
+              <% before_user_continue_day = rank[1] %>
+            <% end %>
+            <tr> 
+              <td class="align-middle text-center rank-info">
+                <%= rank_status %>
+              </td>
+              <td class="align-middle">
+                <% if rank[0].image? %>
+                  <%= image_tag rank[0].image.url, class: "show-user-image" %>
+                  <strong><%= link_to rank[0].name, user_path(rank[0]), class:"link_under_none" %></strong>
+                <% else %>
+                  <%= image_tag 'no-image.png', class: "show-user-image" %>
+                  <strong><%= link_to rank[0].name, user_path(rank[0]), class:"link_under_none" %></strong>
+                <% end %>
+              </td>
+              <td class="align-middle text-center rank-info-continue">
+                <%= rank[1] %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
