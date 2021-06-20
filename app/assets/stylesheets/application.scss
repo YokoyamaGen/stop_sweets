@@ -49,6 +49,13 @@
   margin-top: 5px;
 }
 
+.nav-username a {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  width: 200px;
+}
+
 header {
   background: #000044;
 }
@@ -359,4 +366,15 @@ td {
 
 .rank-info-continue {
   font-size: 20px;
+}
+
+.user-name-diplays a {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  width: 195px;
+}
+
+.rank-header {
+  background: #f4f4f4;
 }
