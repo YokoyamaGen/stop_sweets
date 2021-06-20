@@ -6,6 +6,25 @@ RSpec.describe "Users", type: :request do
       sign_in user
     end
 
+    describe "GET #index" do
+      let(:user) { create(:user) }
+      subject { get(users_path) }
+      it "リクエストが成功する" do
+        subject
+        expect(response).to have_http_status(200)
+      end
+
+      it "name が表示されている" do
+        subject
+        expect(response.body).to include user.name      
+      end
+
+      it "stop_eat_sweets_day_month が表示されている" do
+        subject
+        expect(response.body).to include user.calc_stop_day_month.to_s
+      end
+    end
+
     describe "GET #show" do
       let(:user) { create(:user) }
       subject { get(user_path(user_id)) }
@@ -40,6 +59,16 @@ RSpec.describe "Users", type: :request do
         it "save_money が表示されている" do
           subject
           expect(response.body).to include user.calc_save_money(user.calc_use_day).to_s
+        end
+
+        it "stop_eat_sweets_day_month が表示されている" do
+          subject
+          expect(response.body).to include user.calc_stop_day_month.to_s
+        end
+
+        it "save_money_month が表示されている" do
+          subject
+          expect(response.body).to include user.calc_save_money(user.calc_use_day_month).to_s
         end
       end
 
