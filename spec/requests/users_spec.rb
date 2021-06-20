@@ -9,19 +9,21 @@ RSpec.describe "Users", type: :request do
     describe "GET #index" do
       let(:user) { create(:user) }
       subject { get(users_path) }
-      it "リクエストが成功する" do
-        subject
-        expect(response).to have_http_status(200)
-      end
+      context "ユーザーが存在するとき" do
+        it "リクエストが成功する" do
+          subject
+          expect(response).to have_http_status(200)
+        end
 
-      it "name が表示されている" do
-        subject
-        expect(response.body).to include user.name      
-      end
+        it "name が表示されている" do
+          subject
+          expect(response.body).to include user.name      
+        end
 
-      it "stop_eat_sweets_day_month が表示されている" do
-        subject
-        expect(response.body).to include user.calc_stop_day_month.to_s
+        it "stop_eat_sweets_day_month が表示されている" do
+          subject
+          expect(response.body).to include user.calc_stop_day_month.to_s
+        end
       end
     end
 
