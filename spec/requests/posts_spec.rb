@@ -77,7 +77,7 @@ RSpec.describe "Posts", type: :request do
 
         it "ユーザ投稿画面ページがレンダリングされる" do
           subject
-          expect(response.body).to include "ユーザ投稿画面"
+          expect(response.body).to include "つぶやき"
         end
       end
     end
@@ -102,11 +102,6 @@ RSpec.describe "Posts", type: :request do
         it "content が表示されている" do
           subject
           expect(response.body).to include post.content
-        end
-
-        it "created_at が表示されている" do
-          subject
-          expect(response.body).to include post.created_at.strftime("%Y/%m/%d")
         end
       end
     end
