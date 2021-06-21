@@ -25,15 +25,11 @@ class User < ApplicationRecord
   end
 
   def calc_use_day_month
-    if Date.today.beginning_of_month > self.created_at
+    if Date.today.beginning_of_month >= self.created_at
       (Date.today - Date.today.beginning_of_month).to_i
     else
       (Date.today - self.created_at.to_date).to_i
     end
-  end
-
-  def calc_stop_day
-    self.calc_use_day - self.eat_day
   end
 
   def calc_stop_day_month
