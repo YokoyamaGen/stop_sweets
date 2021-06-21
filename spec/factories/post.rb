@@ -4,7 +4,7 @@ FactoryBot.define do
     user
   end
 
-  trait :invalid do
+  trait :post_invalid do
     content { nil }
   end
 end

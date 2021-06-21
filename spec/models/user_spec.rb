@@ -79,6 +79,30 @@ RSpec.describe User, type: :model do
           expect(user.calc_stop_day).to eq 1
       end
     end
+    context "ユーザ登録した日が前月末の場合で、calc_use_day_month のデータが条件を満たすとき" do
+      let(:user) { build(:user, created_at: Date.today.beginning_of_month - 1) }
+      it "ユーザの月のサービス利用日数が想定通りになる" do
+        expect(user.calc_use_day_month).to eq (Date.today - Date.today.beginning_of_month).to_i
+      end
+    end
+    context "ユーザ登録した日が月初1日の場合で、calc_use_day_month のデータが条件を満たすとき" do
+      let(:user) { build(:user, created_at: Date.today.beginning_of_month) }
+      it "ユーザの月のサービス利用日数が想定通りになる" do
+        expect(user.calc_use_day_month).to eq (Date.today - Date.today.beginning_of_month).to_i
+      end
+    end
+    context "ユーザ登録した日が月初2日の場合で、calc_use_day_month のデータが条件を満たすとき" do
+      let(:user) { build(:user, created_at: Date.today.beginning_of_month + 1) }
+      it "ユーザの月のサービス利用日数が想定通りになる" do
+        expect(user.calc_use_day_month).to eq (Date.today - user.created_at.to_date).to_i
+      end
+    end
+    context "calc_stop_day_month のデータが条件を満たすとき" do
+      let(:user) { build(:user, created_at: Date.today.beginning_of_month - 1, eat_day_month:1) }
+      it "お菓子を辞めた合計日数から食べてしまった日数を差し引いた日数が想定通りになる" do
+          expect(user.calc_stop_day_month).to eq (Date.today - Date.today.beginning_of_month - 1).to_i
+      end
+    end
   end
 
   describe "クラスメソッド" do

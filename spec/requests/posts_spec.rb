@@ -64,18 +64,18 @@ RSpec.describe "Posts", type: :request do
       end
 
       context "パラメータが異常なとき" do
-        let(:params) { { post: attributes_for(:post, :invalid) } }
+        let(:params) { { post: attributes_for(:post, :post_invalid) } }
 
         it "レンダリングが成功する" do
           subject
           expect(response).to have_http_status(200)
         end
 
-        it "ユーザーが保存されない" do
+        it "投稿が保存されない" do
           expect { subject }.not_to change(Post, :count)
         end
 
-        it "ユーザ投稿画面ページがレンダリングされる" do
+        it "コメント投稿画面ページにレンダリングされる" do
           subject
           expect(response.body).to include "つぶやき"
         end
@@ -158,7 +158,7 @@ RSpec.describe "Posts", type: :request do
       end
 
       context 'パラメータが異常なとき' do
-        let(:params) { { post: attributes_for(:post, :invalid) } }
+        let(:params) { { post: attributes_for(:post, :post_invalid) } }
 
         it 'リクエストが成功する' do
           subject
