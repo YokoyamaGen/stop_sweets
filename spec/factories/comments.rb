@@ -4,4 +4,8 @@ FactoryBot.define do
     user
     post
   end
+
+  trait :comment_invalid do
+    content { nil }
+  end
 end
