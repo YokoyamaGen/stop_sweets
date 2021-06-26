@@ -1,61 +1,61 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-6 signup-form">
+  <div class="row justify-content-center">
+    <div class="col-lg-6">
       <% if current_user.id == @user.id %>
-        <div class="report-button">
-          <%=link_to("お菓子を食べた", update_eat_day_user_path(@user), method: :patch, class: "btn btn-primary btn-report")%>
+        <div class="text-right">
+          <%=link_to("お菓子を食べた", update_eat_day_user_path(@user), method: :patch, class: "btn btn-primary mt-3")%>
         </div>
       <% end %>  
-      <div class="user-image">
-        <div class="image-circle">
-          <% if @user.image? %>
-            <%= image_tag @user.image.url, class: "show-image" %>
-          <% else %>
-            <%= image_tag 'no-image.png', class: "show-image" %>
-          <% end %>
-        </div>
+      <div class="user-image text-center mb-4">
+        <% if @user.image? %>
+          <%= image_tag @user.image.url, class: "show-image rounded-circle" %>
+        <% else %>
+          <%= image_tag 'no-image.png', class: "show-image rounded-circle" %>
+        <% end %>
       </div>
-      <div class="user-name-info">
+      <div class="text-center mb-5">
         <h4><strong><%= @user.name %></strong></h4>
       </div>
-      <% if current_user.id == @user.id %>
-        <div class="user-other-info">
-          <strong>メールアドレス</strong>
-        </div>
-        <div class="user-data">
-          <%= @user.email %>
-        </div>
-      <% end %>  
-      <div class="user-other-info">
-        <strong>サービス利用開始日</strong>
-      </div>
-      <div class="user-data">
-        <%= l @user.created_at %>
-      </div>
-      <div class="user-other-info">
-        <strong>サービス利用開始からお菓子を辞めた日数</strong>
-      </div>
-      <div class="user-data">
-        <%= @stop_eat_sweets_day %>日
-      </div>
-      <div class="user-other-info">
-        <strong>サービス利用開始から節約した金額</strong>
-      </div>
-      <div class="user-data">
-        <%= @save_money %>円
-      </div>
-      <div class="user-other-info">
-        <strong>今月のお菓子を辞めた日数</strong>
-      </div>
-      <div class="user-data">
-        <%= @stop_eat_sweets_day_month %>日
-      </div>
-      <div class="user-other-info">
-        <strong>今月の節約した金額</strong>
-      </div>
-      <div class="user-data">
-        <%= @save_money_month %>円
-      </div>
+      <table class="table table-striped table-bordered">
+        <% if current_user.id == @user.id %>
+          <tr>
+            <th class="h5"><strong>メールアドレス</strong></th>
+          </tr>
+          <tr>
+            <th class="font-weight-normal"><%= @user.email %></th>
+          </tr>
+        <% end %>
+        <tr>
+          <th class="h5"><strong>サービス利用開始日</strong></th>
+        </tr>
+        <tr>
+          <th class="font-weight-normal"><%= l @user.created_at %></th>
+        </tr>
+        <tr>
+          <th class="h5"><strong>サービス利用開始からお菓子を辞めた日数</strong></th>
+        </tr>
+        <tr>
+          <th class="font-weight-normal"><%= @stop_eat_sweets_day %>日</th>
+        </tr>
+        <tr>
+          <th class="h5"><strong>サービス利用開始から節約した金額</strong></th>
+        </tr>
+        <tr>
+          <th class="font-weight-normal"><%= @save_money %>円</th>
+        </tr>
+        <tr>
+          <th class="h5"><strong>今月のお菓子を辞めた日数</strong></th>
+        </tr>
+        <tr>
+          <th class="font-weight-normal"><%= @stop_eat_sweets_day_month %>日</th>
+        </tr>
+        <tr>
+          <th class="h5"><strong>今月の節約した金額</strong></th>
+        </tr>
+        <tr>
+          <th class="font-weight-normal"><%= @save_money_month %>円</th>
+        </tr>
+      </table>
       <% if current_user.id == @user.id %>
         <div class="mypage-button-info">
           <%=link_to("編集", edit_user_registration_path, class: "btn btn-info mypage-button")%>
