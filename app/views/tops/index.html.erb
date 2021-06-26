@@ -1,1 +1,106 @@
-<h1>トップページ</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-1"></div>
+    <div class="col-lg-4">
+      <div class="font-weight-bold mt-5 text-right top-page">
+        <h1><strong>Stop Sweets</strong></h1>
+        <p>お菓子を止めたいあなたに</p>
+        <div>
+          <%=link_to("今すぐ始める", new_user_registration_path, class: "btn btn-info mypage-button")%>
+        </div>
+        <div>
+          <%=link_to("ゲストログイン", users_guest_sign_in_path, method: :post, class: "btn btn-primary mypage-button")%>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-5">
+      <%= image_tag 'Diet-amico.png', class: "img-fluid" %>
+    </div>
+  </div>
+</div>
+<div class="container-fluid top-detail text-white mt-5">
+  <div class="row justify-content-around">
+    <div class="col-lg-5 text-center">
+      <div class="service-description font-weight-bold">
+        <h3 class="mb-4"><strong>Stop Sweetsとは</strong></h3>
+        <p>お菓子を止めるために有益な情報を得ることで効率的に目標を達成<br>
+        日々の努力の可視化や同じ志の仲間と取り組むことで挫折を防止するサービスです</p>
+      </div>    
+    </div>
+  </div>  
+</div>
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-lg-5 font-weight-bold">
+      <h3 class="mt-5 mb-3">
+        <div class="fa fa-check rounded-circle"></div>
+        <strong>効率的かつ効果的な情報収集</strong>
+      </h3>
+      <p>お菓子を止めるために必要な情報をご自身で探す手間を省けます。また、多くの方に効果があった情報を手軽に入手可能です。</p>
+      <%= image_tag 'Data report-amico.png', class: "img-fluid" %>
+    </div>
+  </div>
+  <div class="row justify-content-end">
+    <div class="col-lg-5 font-weight-bold">
+      <h3  class="mt-5 mb-3">
+        <div class="fa fa-check rounded-circle"></div>
+        <strong>日々の積み上げを可視化</strong>
+      </h3>
+      <p>サービス利用開始からお菓子をやめた日数や1ヶ月間のお菓子を止めた日数が表示されますので、日々の努力が可視化され、モチベーション維持に繋がります。</p>
+      <%= image_tag 'Visual data-rafiki.png', class: "img-fluid" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-5 font-weight-bold">
+      <h3 class="mt-5 mb-3">
+        <div class="fa fa-check rounded-circle"></div>
+        <strong>同じ志の仲間と協力できる環境</strong>
+      </h3>
+      <p>他のユーザの日々のつぶやきを見ることができ、刺激を受けることができますため、孤独に打ち勝つ環境がございます。</p>
+      <%= image_tag 'Tweetstorm-amico.png', class: "img-fluid" %>
+    </div>
+  </div>
+</div>
+<div class="container-fluid top-detail mt-5">
+  <div class="row justify-content-around">
+    <div class="col-lg-5 text-center">
+      <div class="mt-5 mb-3 font-weight-bold text-white">
+        <h4><strong>他にもお菓子を止めるための仕組みがあります</strong></h4>
+      </div>    
+    </div>
+  </div>
+  <div class="row text-white font-weight-bold justify-content-center pb-4">
+    <div class="col-lg-3">
+      <div class="service-detail-description">
+        <span class="box-title">いいね</span>
+        <p>他のユーザのつぶやきに対していいねをすることやいいねをもらったりすることで、お互いに刺激を与え合えます。</p>
+      </div>
+    </div>
+    <div class="col-lg-3">
+      <div class="service-detail-description">
+        <span class="box-title">コメント</span>
+        <p>他のユーザのつぶやきに対して、コメントをすることで、他のユーザとのコミュニケーションを取ることができます。</p>
+      </div>
+    </div>
+    <div class="col-lg-3">
+      <div class="service-detail-description">
+        <span class="box-title">ランキング</span>
+        <p>1ヶ月間のお菓子を止めた日数を元にランキング表示されるため、日々の努力が可視化されます。</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row my-5 justify-content-around">
+    <div class="col-lg-5 font-weight-bold text-center">
+      <h2 class="mb-4"><strong>Stop Sweetsを始めましょう</strong></h2>
+        <div>
+          <%=link_to("今すぐ始める", new_user_registration_path, class: "btn btn-info mypage-button")%>
+        </div>
+        <div>
+          <%=link_to("ゲストログイン", users_guest_sign_in_path, method: :post, class: "btn btn-primary mypage-button")%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
