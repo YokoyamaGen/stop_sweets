@@ -378,3 +378,49 @@ td {
 .rank-header {
   background: #f4f4f4;
 }
+
+// トップページ
+.top-page h1 {
+  font-size:60px;
+}
+
+.top-detail {
+  background-color:#000044;
+}
+
+.service-description {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.service-detail-description {
+  position: relative;
+  margin: 2em 0;
+  padding: 1.5em 1em 3.5em 1em;
+  border: solid 3px #FFA500;
+  border-radius: 8px;
+  height:150px;
+}
+
+.service-detail-description .box-title {
+  position: absolute;
+  display: inline-block;
+  top: -13px;
+  left: 10px;
+  padding: 0 9px;
+  line-height: 1;
+  font-size: 19px;
+  background:#000044;
+  color: #FFA500;
+  font-weight: bold;
+}
+
+.service-detail-description p {
+  margin: 0; 
+  padding: 0;
+}
+
+.fa-check {
+  background-color: #FFA500;
+  color:#f4f4f4;
+}
