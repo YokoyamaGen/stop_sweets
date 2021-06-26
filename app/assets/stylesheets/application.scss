@@ -90,12 +90,6 @@ header {
   box-shadow: 0 2px 2px 0 rgb(0, 0, 0)
 }
 
-.signup-form {
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 50px;
-}
-
 .form-style, .form-title {
   border: solid 1px #ccc;
   padding: 10px;
@@ -127,17 +121,8 @@ header {
 
 // マイページ
 
-.image-circle {
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 50%;
-  overflow: hidden;
-}
-
 .user-image {
-  text-align: center;
-  margin-top:40px;
-  margin-bottom:20px;
+  margin-top: 100px;
 }
 
 .show-image {
@@ -148,6 +133,7 @@ header {
   margin: 0px;
   border: 2px solid #CCC;
   background-color: #CCC;
+  box-shadow: 0 4px 4px 0 black;
 }
 
 .mypage-button-info {
@@ -165,48 +151,12 @@ header {
   box-shadow: 0 2px 2px 0 rgb(0, 0, 0)
 }
 
-.report-button {
-  width: 510px;
-  height: 50px;
-  position:relative;
-}
-
 .btn-primary {
   display: inline-block;
   border-radius: 30px;
   background-color: #000044;
   border: none;
   box-shadow: 0 2px 2px 0 rgb(0, 0, 0)
-}
-
-.btn-report {
-  margin-top: 15px;
-  position:absolute;
-  top: 10px;
-  right: 0px;
-}
-
-.user-name-info {
-  text-align: center;
-  margin-bottom: 50px;
-}
-
-.user-other-info {
-  background: #f4f4f4;
-  border: 1px solid rgba(0,0,0,0.1);
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 20px;
-  font-size: 20px;
-}
-
-.user-data {
-  border: 1px solid rgba(0,0,0,0.1);
-  padding-left: 20px;
-  font-size: 18px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  word-wrap: break-word;
 }
 
 // フラッシュ
