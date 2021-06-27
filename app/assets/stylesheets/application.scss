@@ -120,7 +120,6 @@ header {
 }
 
 // マイページ
-
 .user-image {
   margin-top: 100px;
 }
@@ -160,13 +159,11 @@ header {
 }
 
 // フラッシュ
-
 .flash-style {
   margin-top: 30px;
 }
 
 // 投稿画面
-
 .btn-twitter {
   margin: 15px 15px 30px auto;
 }
@@ -258,7 +255,6 @@ header {
 }
 
 // 詳細画面
-
 table {
   border-collapse:collapse;
   width: 100%;
@@ -284,13 +280,11 @@ table {
 }
 
 //検索機能 
-
 .search-form {
   margin-left: 60px;
 }
 
 // ランキング
-
 .show-user-image {
   width: 80px;
   height: 80px;
@@ -332,6 +326,20 @@ td {
 // トップページ
 .top-page h1 {
   font-size:60px;
+}
+
+@media only screen and (max-width:767px) {
+  .top-page h1 {
+    font-size: 45px;
+  }
+
+  h2, h3{
+    font-size: 25px;
+  }
+
+  h4 {
+    font-size: 20px;
+  }
 }
 
 .top-detail {
