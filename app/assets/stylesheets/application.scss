@@ -120,7 +120,6 @@ header {
 }
 
 // マイページ
-
 .user-image {
   margin-top: 100px;
 }
@@ -134,6 +133,18 @@ header {
   border: 2px solid #CCC;
   background-color: #CCC;
   box-shadow: 0 4px 4px 0 black;
+}
+
+@media only screen and (max-width:767px) {
+  .show-image {
+    width: 120px;
+    height: 120px
+  }
+
+  .user-image {
+    margin-top: 70px;
+  }
+
 }
 
 .mypage-button-info {
@@ -160,13 +171,11 @@ header {
 }
 
 // フラッシュ
-
 .flash-style {
   margin-top: 30px;
 }
 
 // 投稿画面
-
 .btn-twitter {
   margin: 15px 15px 30px auto;
 }
@@ -257,8 +266,17 @@ header {
   margin-right: 20px;
 }
 
-// 詳細画面
+@media only screen and (max-width:767px) {
+  .dropdown-menu {
+    min-width: 10px
+  }
 
+  .user-name {
+    font-size: 1.2em;
+  }
+}
+
+// 詳細画面
 table {
   border-collapse:collapse;
   width: 100%;
@@ -284,13 +302,20 @@ table {
 }
 
 //検索機能 
-
 .search-form {
   margin-left: 60px;
+  margin-top: 20px;
 }
 
-// ランキング
+@media only screen and (max-width:767px) {
+  .search-form {
+    margin-left: 15px;
+    margin-top: 50px;
+  }
+}
 
+
+// ランキング
 .show-user-image {
   width: 80px;
   height: 80px;
@@ -298,7 +323,6 @@ table {
   border-style: none;
   margin: 0px;
   object-fit:cover;
-  border-radius: 50%;
   border: 1px solid #ccc;
   margin-right:10px;
   box-shadow: 0 2px 2px 0 black;
@@ -322,16 +346,56 @@ td {
   overflow: hidden;
   text-overflow: ellipsis;
   display: inline-block;
-  width: 195px;
+  width: 120px;
 }
 
 .rank-header {
   background: #f4f4f4;
 }
 
+@media only screen and (max-width:767px) {
+  .rank-info {
+    font-size: 30px;
+  }
+
+  .show-user-image {
+    width: 65px;
+    height: 65px;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+
+  .user-name-diplays {
+    text-align: center;
+  }
+
+  .rank-user-name {
+    text-align: center;
+  }
+
+  .user-name-diplays a {
+    width: 100px;
+    margin-top: 15px;
+  }
+}
+
 // トップページ
 .top-page h1 {
   font-size:60px;
+}
+
+@media only screen and (max-width:767px) {
+  .top-page h1 {
+    font-size: 45px;
+  }
+
+  h2, h3{
+    font-size: 25px;
+  }
+
+  h4 {
+    font-size: 20px;
+  }
 }
 
 .top-detail {
