@@ -292,7 +292,6 @@ table {
   border-style: none;
   margin: 0px;
   object-fit:cover;
-  border-radius: 50%;
   border: 1px solid #ccc;
   margin-right:10px;
   box-shadow: 0 2px 2px 0 black;
@@ -316,11 +315,36 @@ td {
   overflow: hidden;
   text-overflow: ellipsis;
   display: inline-block;
-  width: 195px;
+  width: 120px;
 }
 
 .rank-header {
   background: #f4f4f4;
+}
+
+@media only screen and (max-width:767px) {
+  .rank-info {
+    font-size: 30px;
+  }
+
+  .show-user-image {
+    width: 65px;
+    height: 65px;
+    margin-top: 10px;
+  }
+
+  .user-name-diplays {
+    text-align: center;
+  }
+
+  .rank-user-name {
+    text-align: center;
+  }
+
+  .user-name-diplays a {
+    width: 100px;
+    margin-top: 15px;
+  }
 }
 
 // トップページ
