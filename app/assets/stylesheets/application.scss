@@ -10,7 +10,7 @@
 }
 
 .drawer-nav {
-  background-color:#000044 !important;
+  background-color:#6a318f !important;
 }
 
 .drawer-menu-item {
@@ -57,7 +57,7 @@
 }
 
 header {
-  background: #000044;
+  background: #6a318f;
 }
 
 .drawer-hamburger {
@@ -83,7 +83,7 @@ header {
 .btn-info {
   display: inline-block;
   border-radius: 30px;
-  background-color: #FFA500;
+  background-color: #fb0050;
   border: none;
   text-align: center;
   margin: 15px 15px 5px auto;
@@ -93,7 +93,7 @@ header {
 .form-style, .form-title {
   border: solid 1px #ccc;
   padding: 10px;
-  border-top: solid 2px #000044;
+  border-top: solid 2px #6a318f;
 }
 
 .form-style {
@@ -165,7 +165,7 @@ header {
 .btn-primary {
   display: inline-block;
   border-radius: 30px;
-  background-color: #000044;
+  background-color: #6a318f;
   border: none;
   box-shadow: 0 2px 2px 0 rgb(0, 0, 0)
 }
@@ -186,11 +186,11 @@ header {
 }
 
 .page-link {
-  color: #FFA500;
+  color: #fb0050;
 }
 
 .page-item.active .page-link {
-  background-color:#000044 !important;
+  background-color:#6a318f !important;
 }
 
 .post-content {
@@ -207,7 +207,7 @@ header {
 
 .link_under_none {
   text-decoration: none !important;
-  color: #FFA500;
+  color: #fb0050;
 }
 
 .content {
@@ -223,17 +223,17 @@ header {
 }
 
 .dislike-info {
-  color:#CCC;
+  color:#ccc;
   text-decoration: none !important;
 }
 
 .like-info {
-  color:#FFA500;
+  color:#fb0050;
   text-decoration: none !important;
 }
 
 .dropdown-item {
-  color:#FFA500;  
+  color:#fb0050;  
 }
 
 .dropdown {
@@ -256,7 +256,7 @@ header {
 }
 
 .comment-style {
-  color:#000044;
+  color:#6a318f;
   text-decoration: none !important;
 }
 
@@ -291,7 +291,7 @@ table {
 
 .post-title {
   margin-top: 50px;
-  border-top: solid 4px #000044;
+  border-top: solid 4px #6a318f;
   padding: 1rem;
 }
 
@@ -379,9 +379,18 @@ td {
   }
 }
 
-// トップページ
+トップページ
 .top-page h1 {
-  font-size:60px;
+  
+  
+}
+
+.top-page-message {
+  background-color: #6a318f;
+  color: #FFF;
+  font-size: 50px;
+  padding :30px;
+  position: relative; right: 140px; 
 }
 
 @media only screen and (max-width:767px) {
@@ -399,7 +408,7 @@ td {
 }
 
 .top-detail {
-  background-color:#000044;
+  background-color:#6a318f;
 }
 
 .service-description {
@@ -409,32 +418,54 @@ td {
 
 .service-detail-description {
   position: relative;
-  margin: 2em 0;
   padding: 1.5em 1em 3.5em 1em;
-  border: solid 3px #FFA500;
   border-radius: 8px;
-  height:150px;
+  height:250px;
+  margin: 2em 0;
+  font-weight: bold;
+  color: #000000;
+  background: #FFF;
+  border-radius: 10px;
 }
 
-.service-detail-description .box-title {
-  position: absolute;
-  display: inline-block;
-  top: -13px;
-  left: 10px;
-  padding: 0 9px;
-  line-height: 1;
-  font-size: 19px;
-  background:#000044;
-  color: #FFA500;
-  font-weight: bold;
+.service-detail-description h4 {
+  color:#6a318f;
 }
 
 .service-detail-description p {
   margin: 0; 
-  padding: 0;
+  padding:0;
 }
 
 .fa-check {
-  background-color: #FFA500;
+  background-color: #fb0050;
   color:#f4f4f4;
+}
+
+.top-page-style {
+  height: 700px;
+  padding-top:100px;
+}
+
+.top-page-button {
+  display: inline-block;
+  border-radius: 30px;
+  width: 300px;
+  font-size: 25px;
+  margin: 20px 20px;
+  padding: 10px;
+  box-shadow: 0 2px 2px 0 rgb(0, 0, 0)
+}
+
+.top-page-image {
+  position: relative; left: 90px;   
+}
+
+.start-button {
+  position: relative; right: 150px;
+}
+
+.other-service {
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
