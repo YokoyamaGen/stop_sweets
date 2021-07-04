@@ -379,23 +379,21 @@ td {
   }
 }
 
-トップページ
-.top-page h1 {
-  
-  
-}
-
+// トップページ
 .top-page-message {
   background-color: #6a318f;
   color: #FFF;
-  font-size: 50px;
+  font-size: 45px;
   padding :30px;
-  position: relative; right: 140px; 
+  position: relative; 
+  right: 140px;
 }
 
 @media only screen and (max-width:767px) {
   .top-page h1 {
-    font-size: 45px;
+    font-size: 25px;
+    right: 10px;
+    bottom: 80px;
   }
 
   h2, h3{
@@ -404,6 +402,30 @@ td {
 
   h4 {
     font-size: 20px;
+  }
+
+  .start-button {
+    right: 0px;
+  }
+
+  .top-page-message {
+    left: 10px;
+    padding: 25px;
+  }
+
+  .top-page-button {
+    width: 55% !important;
+    font-size: 20px !important;
+    padding: 10px !important;
+  }
+
+  .start-button {
+    left: 0px;
+    bottom: 80px;
+  }
+
+  .top-page-image {
+    bottom: 40px;
   }
 }
 
@@ -443,26 +465,23 @@ td {
 }
 
 .top-page-style {
-  height: 700px;
+  height: 750px;
   padding-top:100px;
 }
 
 .top-page-button {
   display: inline-block;
   border-radius: 30px;
-  width: 300px;
+  width: 250px;
   font-size: 25px;
-  margin: 20px 20px;
+  margin: 15px 20px;
   padding: 10px;
   box-shadow: 0 2px 2px 0 rgb(0, 0, 0)
 }
 
-.top-page-image {
-  position: relative; left: 90px;   
-}
-
 .start-button {
-  position: relative; right: 150px;
+  position: relative;
+  right: 150px;
 }
 
 .other-service {
