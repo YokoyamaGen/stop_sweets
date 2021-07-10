@@ -33,6 +33,7 @@ ja:
       user: ユーザ
       admin_user: 管理者ユーザー
       comment: コメント
+      information: ニュース
   devise:
     confirmations:
       confirmed: メールアドレスが確認できました。

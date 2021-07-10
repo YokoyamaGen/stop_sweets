@@ -16,6 +16,7 @@ ja:
       post: 投稿
       like: いいね
       comment: コメント
+      information: ニュース
     attributes:
       post:
         content: 投稿
@@ -25,6 +26,10 @@ ja:
         post: 投稿
       comment:
         content: コメント
+      information:
+        title: タイトル
+        content: 内容
+        image: 画像
   helpers:
     submit:
       create: 投稿する
