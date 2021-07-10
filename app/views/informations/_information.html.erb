@@ -1,2 +1,11 @@
-<%# <%= information.title %>
-<%= link_to information.title, information_path(information.id), class:"link_under_none" %>
+<table class="table">
+  <tbody>
+    <tr>
+      <td>
+        <p class="posted_day"><%= l information.updated_at %>に投稿</p>
+        <h2><%= link_to information.title, information_path(information.id), class:"link_under_none_post" %></h2>
+      </td>
+    </tr>
+  </tbody>
+</table>
+      
