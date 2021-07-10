@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_10_071906) do
+ActiveRecord::Schema.define(version: 2021_07_10_081405) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -90,8 +90,6 @@ ActiveRecord::Schema.define(version: 2021_07_10_071906) do
     t.string "name", default: "", null: false
     t.integer "cost", default: 0
     t.string "image"
-    t.string "goal_image"
-    t.text "motivation"
     t.integer "eat_day", default: 0
     t.date "eat_day_updated_on", default: "2021-04-26", null: false
     t.integer "eat_day_month", default: 0
