@@ -488,3 +488,17 @@ td {
   margin-top: 100px;
   margin-bottom: 100px;
 }
+
+// ニュース機能
+.posted_day {
+  font-size: 18px;
+  color: rgba(0,0,0,0.6);
+  line-height: 1.8;
+}
+
+.link_under_none_post {
+  text-decoration: none !important;
+  font-weight: 700;
+  color: rgba(0,0,0,0.87);
+  line-height: 1.5;
+}
