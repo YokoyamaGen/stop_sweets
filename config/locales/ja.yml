@@ -26,6 +26,8 @@ ja:
         post: 投稿
       comment:
         content: コメント
+        user: コメントユーザ
+        post: 投稿
       information:
         title: タイトル
         content: 内容
