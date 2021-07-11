@@ -1,8 +1,8 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-3"></div>
-    <div class="col-lg-6">
-      <%= @information.content %>
+    <div class="col-lg-6 my-lg-5">
+      <%= markdown(@information.content) %>
       <%= link_to("戻る", informations_path,  class: "btn btn-secondary btn-lg btn-block btn-back") %>
     </div>
   </div>
