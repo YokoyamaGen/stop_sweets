@@ -54,6 +54,9 @@ gem 'ransack'
 # マークダウン記法の文字列をHTMLに変換
 gem 'redcarpet'
 
+# シンタックスハイライト
+gem 'rouge'
+
 group :development, :test do
   # Rails用のテストフレームワーク
   gem 'rspec-rails'

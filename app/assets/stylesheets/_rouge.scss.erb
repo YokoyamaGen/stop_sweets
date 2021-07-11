@@ -1,0 +1,102 @@
+<%= Rouge::Themes::Magritte.render(scope: '.highlight') %> 
+
+pre.highlight {
+    overflow: auto;
+    word-wrap: normal;
+    white-space: pre;
+    background-color: #f6ffff;
+    padding: 0.5rem;
+    margin: 0;
+    border: 2px dashed #d6dddd;
+}
+
+div.highlight {
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+.highlight {
+    background-color: #f8f8f8;
+    .err, .nt {
+    color: #999999;
+    font-weight: bold;
+    background-color: #f6ffff;
+    }
+    .na {
+    color: #212529;
+    }
+    .vi, .mi, .no {
+    color: #008080;
+    font-weight: normal;
+    }
+    .s1, .s2, .sh, .si {
+    color: #d14;
+    font-weight: normal;
+    }
+    .nc {
+    color: #445588;
+    font-weight: bold;
+    }
+    .nf {
+    color: #990000;
+    font-weight: bold;
+    }
+    .nb {
+    color: #0086B3;
+    font-weight: normal;
+    }
+    .o, .kp {
+    color: #000000;
+    }
+    .mf, .mi {
+    color: #009999;
+    }
+    .ss {
+    color: #990073;
+    }
+    .c {
+    color: #999988;
+    }
+}
+
+.ruby {
+    .err {
+    color: #a61717;
+    }
+    .c1 {
+    color: #999988;
+    }
+}
+
+.markdown {
+    li a {
+    color: #e83e8c;
+    } 
+    thead {
+    background-color: #EEFFFF;
+    display: table-header-group;
+    ertical-align: middle;
+    width: 100%;
+    }
+    table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+    color: #212529;
+    border-spacing: 2px;
+    display: block;
+    overflow-x: scroll;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    }
+    th,td {
+    border: 1px solid #dee2e6;
+    padding: 0.75rem;
+    display: table-cell;
+    border-bottom-width: 2px;
+    white-space: nowrap;
+    }
+    tbody tr:nth-child(odd) {
+    background-color: rgba(0,0,0,0.05);
+    }
+}
