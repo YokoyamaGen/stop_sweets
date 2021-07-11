@@ -1,4 +1,13 @@
 ja:
+  attributes:
+    id: ID
+    namespace: 名前空間
+    resource_type: リソースタイプ
+    resource_id: リソースID
+    author_type: 著者タイプ
+    author_id: 著者ID
+    created_at: 作成日時
+    updated_at: 更新日時
   time:
     formats:
       default: "%Y/%m/%d"
@@ -7,6 +16,7 @@ ja:
       post: 投稿
       like: いいね
       comment: コメント
+      information: ニュース
     attributes:
       post:
         content: 投稿
@@ -16,6 +26,12 @@ ja:
         post: 投稿
       comment:
         content: コメント
+        user: コメントユーザ
+        post: 投稿
+      information:
+        title: タイトル
+        content: 内容
+        image: 画像
   helpers:
     submit:
       create: 投稿する

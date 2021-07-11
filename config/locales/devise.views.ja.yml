@@ -1,7 +1,7 @@
 ja:
   activerecord:
     attributes:
-      user:
+      user: &user
         confirmation_sent_at: パスワード確認送信時刻
         confirmation_token: パスワード確認用トークン
         confirmed_at: パスワード確認時刻
@@ -28,8 +28,13 @@ ja:
         name: ユーザ名
         cost: １日のお菓子にかかっている費用
         image: プロフィール画像
+      admin_user: *user
     models:
       user: ユーザ
+      admin_user: 管理者ユーザー
+      comment: コメント
+      information: ニュース
+      admin_comment: 管理者コメント
   devise:
     confirmations:
       confirmed: メールアドレスが確認できました。
