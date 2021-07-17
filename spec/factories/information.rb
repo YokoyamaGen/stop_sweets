@@ -1,7 +1,6 @@
 FactoryBot.define do
   factory :information do
-    title { "MyString" }
-    content { "MyText" }
-    image { "MyString" }
+    title { Faker::Lorem.paragraph }
+    content { Faker::Lorem.paragraph }
   end
 end
