@@ -1,78 +1,16 @@
-@import "users";
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome";
 @import 'rouge';
+@import "navbar";
+@import "users";
+@import "rank";
+@import "post";
+@import "top";
 
-// ナビバー
-.drawer-hamburger-icon,
-.drawer-hamburger-icon:after,
-.drawer-hamburger-icon:before {
-  background-color: #FFF !important;
-}
-
-.drawer-nav {
-  background-color:#6a318f !important;
-}
-
-.drawer-menu-item {
-  color:#FFF !important;
-  margin: 10px 25px;
-  font-size: 18px !important;
-  text-decoration: none !important;
-}
-
-.drawer-menu-item:hover {
-  color:#007bff !important;
-}
-
-.menu-icon {
-  color: #fff;
-  margin: 30px 30px 2px 30px;
-}
-
-.menu-icon {
-  font-size: 3em;
-}
-
-.nav-header {
-  height: 100px;
-  margin: 20px;
-}
-
-.link_under_none_white {
-  text-decoration: none !important;
-  color: #fff;
-}
-
-.nav-username {
-  margin: auto auto 10px 25px;
-  font-size:18px;
-  margin-top: 5px;
-}
-
-.nav-username a {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: inline-block;
-  width: 200px;
-}
-
-header {
-  background: #6a318f;
-}
-
-.drawer-hamburger {
-  display: inline-block;
-  width: 40px;
-  height: 40px;
-  vertical-align: middle;
-  margin: 5px;
-}
-
-.navbar-brand {
-  font-size: 30px;
-  font-family: arial black;
-}
+$theme-color: #6a318f;
+$sub-color: #fb0050;
+$sub-color-third: #ccc;
+$sub-color-fourth: #000000;
 
 .fa {
   font-weight:400;
@@ -80,21 +18,31 @@ header {
   line-height:1;
 }
 
+.top-page-button {
+  display: inline-block;
+  border-radius: 30px;
+  width: 250px;
+  font-size: 25px;
+  margin: 15px 20px;
+  padding: 10px;
+  box-shadow: 0 2px 2px 0 $sub-color-fourth
+}
+
 // ログイン画面、アカウント登録、ユーザ情報編集
 .btn-info {
   display: inline-block;
   border-radius: 30px;
-  background-color: #fb0050;
+  background-color: $sub-color;
   border: none;
   text-align: center;
   margin: 15px 15px 5px auto;
-  box-shadow: 0 2px 2px 0 rgb(0, 0, 0)
+  box-shadow: 0 2px 2px 0 $sub-color-fourth
 }
 
-.form-style, .form-title {
-  border: solid 1px #ccc;
+.form-style .form-title {
+  border: solid 1px $sub-color-third;
   padding: 10px;
-  border-top: solid 2px #6a318f;
+  border-top: solid 2px $theme-color;
 }
 
 .form-style {
@@ -112,7 +60,7 @@ header {
 }
 
 .form-style .form-content {
-  border: solid 1px #ccc;
+  border: solid 1px $sub-color-third;
   padding: 30px;
 }
 
@@ -120,374 +68,17 @@ header {
   margin-bottom: 20px;
 }
 
-// マイページ
-.user-image {
-  margin-top: 100px;
-}
-
-.show-image {
-  width: 150px;
-  height: 150px;
-  vertical-align: middle;
-  border-style: none;
-  margin: 0px;
-  border: 2px solid #CCC;
-  background-color: #CCC;
-  box-shadow: 0 4px 4px 0 black;
-}
-
-@media only screen and (max-width:767px) {
-  .show-image {
-    width: 120px;
-    height: 120px
-  }
-
-  .user-image {
-    margin-top: 70px;
-  }
-
-}
-
-.mypage-button-info {
-  text-align: center;
-  height: 70px;
-  margin-top: 50px;
-}
-
-.mypage-button {
-  display: inline-block;
-  border-radius: 30px;
-  max-width: 200px;
-  min-width: 150px;
-  margin: 10px 10px;
-  box-shadow: 0 2px 2px 0 rgb(0, 0, 0)
-}
-
 .btn-primary {
   display: inline-block;
   border-radius: 30px;
-  background-color: #6a318f;
+  background-color: $theme-color;
   border: none;
-  box-shadow: 0 2px 2px 0 rgb(0, 0, 0)
+  box-shadow: 0 2px 2px 0 $sub-color-fourth
 }
 
 // フラッシュ
 .flash-style {
   margin-top: 30px;
-}
-
-// 投稿画面
-.btn-twitter {
-  margin: 15px 15px 30px auto;
-}
-
-.pagination {
-  margin-top:20px;
-  justify-content: center;
-}
-
-.page-link {
-  color: #fb0050;
-}
-
-.page-item.active .page-link {
-  background-color:#6a318f !important;
-}
-
-.post-content {
-  border: dotted 1px silver;
-  height: 250px;
-  margin-top: 10px;
-  padding: 10px;
-}
-
-.user-name {
-  font-size: 1.5em;
-  margin-left: 10px;
-}
-
-.link_under_none {
-  text-decoration: none !important;
-  color: #fb0050;
-}
-
-.content {
-  margin: 0px auto;
-  width: 60%;
-  text-overflow: ellipsis;
-  height: 70px;
-}
-
-.post-icon {
-  display: inline;
-  float:right
-}
-
-.dislike-info {
-  color:#CCC;
-  text-decoration: none !important;
-}
-
-.like-info {
-  color:#fb0050;
-  text-decoration: none !important;
-}
-
-.dropdown-item {
-  color:#fb0050;  
-}
-
-.dropdown {
-  float: right;
-  display: inline;
-}
-
-.form-content {
-  border: solid 1px #ccc;
-  padding: 30px;
-}
-
-.btn-back {
-  display: inline-block;
-  border-radius: 30px;
-  border: none;
-  text-align: center;
-  margin: 15px 15px 5px auto;
-  box-shadow: 0 2px 2px 0 rgb(0, 0, 0) 
-}
-
-.comment-style {
-  color:#6a318f;
-  text-decoration: none !important;
-}
-
-.comment-icon {
-  display: inline;
-  float:right;
-  margin-right: 20px;
-}
-
-@media only screen and (max-width:767px) {
-  .dropdown-menu {
-    min-width: 10px
-  }
-
-  .user-name {
-    font-size: 1.2em;
-  }
-}
-
-// 詳細画面
-table {
-  border-collapse:collapse;
-  width: 100%;
-  margin-bottom: 1rem;
-  color: #212529;
-  margin-top: 30px;
-}
-
-.post-detail {
-  margin-bottom: 30px;
-}
-
-.post-title {
-  margin-top: 50px;
-  border-top: solid 4px #6a318f;
-  padding: 1rem;
-}
-
-.post-detail-content {
-  border: dotted 1px silver;
-  height: 250px;
-  padding: 10px;
-}
-
-//検索機能 
-.search-form {
-  margin-left: 60px;
-  margin-top: 20px;
-}
-
-@media only screen and (max-width:767px) {
-  .search-form {
-    margin-left: 15px;
-    margin-top: 50px;
-  }
-}
-
-
-// ランキング
-.show-user-image {
-  width: 80px;
-  height: 80px;
-  vertical-align: middle;
-  border-style: none;
-  margin: 0px;
-  object-fit:cover;
-  border: 1px solid #ccc;
-  margin-right:10px;
-  box-shadow: 0 2px 2px 0 black;
-  border: 2px solid #CCC;
-  background-color: #CCC;
-}
-
-td {
-  height: 150px;
-}
-
-.rank-info {
-  font-size: 40px;
-}
-
-.rank-info-continue {
-  font-size: 20px;
-}
-
-.user-name-diplays a {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: inline-block;
-  width: 120px;
-}
-
-.rank-header {
-  background: #f4f4f4;
-}
-
-@media only screen and (max-width:767px) {
-  .rank-info {
-    font-size: 30px;
-  }
-
-  .show-user-image {
-    width: 65px;
-    height: 65px;
-    margin-top: 10px;
-    margin-left: 10px;
-  }
-
-  .user-name-diplays {
-    text-align: center;
-  }
-
-  .rank-user-name {
-    text-align: center;
-  }
-
-  .user-name-diplays a {
-    width: 100px;
-    margin-top: 15px;
-  }
-}
-
-// トップページ
-.top-page-message {
-  background-color: #6a318f;
-  color: #FFF;
-  font-size: 45px;
-  padding :30px;
-  position: relative; 
-  right: 140px;
-}
-
-@media only screen and (max-width:767px) {
-  .top-page h1 {
-    font-size: 25px;
-    right: 10px;
-    bottom: 80px;
-  }
-
-  h2, h3{
-    font-size: 25px;
-  }
-
-  h4 {
-    font-size: 20px;
-  }
-
-  .start-button {
-    right: 0px;
-  }
-
-  .top-page-message {
-    left: 10px;
-    padding: 25px;
-  }
-
-  .top-page-button {
-    width: 55% !important;
-    font-size: 20px !important;
-    padding: 10px !important;
-  }
-
-  .start-button {
-    left: 0px;
-    bottom: 80px;
-  }
-
-  .top-page-image {
-    bottom: 40px;
-  }
-}
-
-.top-detail {
-  background-color:#6a318f;
-}
-
-.service-description {
-  margin-top: 80px;
-  margin-bottom: 80px;
-}
-
-.service-detail-description {
-  position: relative;
-  padding: 1.5em 1em 3.5em 1em;
-  border-radius: 8px;
-  height:250px;
-  margin: 2em 0;
-  font-weight: bold;
-  color: #000000;
-  background: #FFF;
-  border-radius: 10px;
-}
-
-.service-detail-description h4 {
-  color:#6a318f;
-}
-
-.service-detail-description p {
-  margin: 0; 
-  padding: 0;
-}
-
-.fa-check {
-  background-color: #fb0050;
-  color:#f4f4f4;
-}
-
-.top-page-style {
-  height: 750px;
-  padding-top:100px;
-}
-
-.top-page-button {
-  display: inline-block;
-  border-radius: 30px;
-  width: 250px;
-  font-size: 25px;
-  margin: 15px 20px;
-  padding: 10px;
-  box-shadow: 0 2px 2px 0 rgb(0, 0, 0)
-}
-
-.start-button {
-  position: relative;
-  right: 150px;
-}
-
-.other-service {
-  margin-top: 100px;
-  margin-bottom: 100px;
 }
 
 // ニュース機能

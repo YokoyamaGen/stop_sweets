@@ -1,0 +1,152 @@
+$theme-color: #6a318f;
+$sub-color: #fb0050;
+$sub-color-third: #ccc;
+$sub-color-fourth: #000000;
+
+.btn-twitter {
+  margin: 15px 15px 30px auto;
+}
+
+.pagination {
+  margin-top:20px;
+  justify-content: center;
+}
+
+.page-link {
+  color: $sub-color;
+}
+
+.page-item.active .page-link {
+  background-color: $theme-color !important;
+}
+
+.post-content {
+  border: dotted 1px silver;
+  height: 250px;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.user-name {
+  font-size: 1.5em;
+  margin-left: 10px;
+}
+
+.link_under_none {
+  text-decoration: none !important;
+  color: $sub-color;
+}
+
+.content {
+  margin: 0px auto;
+  width: 60%;
+  text-overflow: ellipsis;
+  height: 70px;
+}
+
+.post-icon {
+  display: inline;
+  float:right
+}
+
+.dislike-info {
+  color: $sub-color-third;
+  text-decoration: none !important;
+}
+
+.like-info {
+  color: $sub-color;
+  text-decoration: none !important;
+}
+
+.dropdown-item {
+  color: $sub-color;  
+}
+
+.dropdown {
+  float: right;
+  display: inline;
+}
+
+.form-content {
+  border: solid 1px $sub-color-third;
+  padding: 30px;
+}
+
+.btn-back {
+  display: inline-block;
+  border-radius: 30px;
+  border: none;
+  text-align: center;
+  margin: 15px 15px 5px auto;
+  box-shadow: 0 2px 2px 0 $sub-color-fourth
+}
+
+.comment-style {
+  color: $theme-color;
+  text-decoration: none !important;
+}
+
+.comment-icon {
+  display: inline;
+  float:right;
+  margin-right: 20px;
+}
+
+@media only screen and (max-width:767px) {
+  .dropdown-menu {
+    min-width: 10px
+  }
+
+  .user-name {
+    font-size: 1.2em;
+  }
+}
+
+table {
+  border-collapse:collapse;
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529;
+  margin-top: 30px;
+}
+
+.post-detail {
+  margin-bottom: 30px;
+}
+
+.post-title {
+  margin-top: 50px;
+  border-top: solid 4px $theme-color;
+  padding: 1rem;
+}
+
+.post-detail-content {
+  border: dotted 1px silver;
+  height: 250px;
+  padding: 10px;
+}
+
+.show_image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  border: 2px solid $sub-color-third;
+  background-color: $sub-color-third;
+  box-shadow: 0 2px 2px 0 $sub-color-fourth
+}
+
+.search-form {
+  margin-left: 60px;
+  margin-top: 20px;
+}
+
+@media only screen and (max-width:767px) {
+  .search-form {
+    margin-left: 15px;
+    margin-top: 50px;
+  }
+}

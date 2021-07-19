@@ -1,0 +1,69 @@
+$theme-color: #6a318f;
+$sub-color-second: #FFF;
+
+.drawer-hamburger-icon,
+.drawer-hamburger-icon:after,
+.drawer-hamburger-icon:before {
+  background-color: $sub-color-second !important;
+}
+
+.drawer-nav {
+  background-color: $theme-color !important;
+}
+
+.drawer-menu-item {
+  color: $sub-color-second !important;
+  margin: 10px 25px;
+  font-size: 18px !important;
+  text-decoration: none !important;
+
+  &:hover {
+    color:#007bff !important;
+  }  
+}
+
+.menu-icon {
+  color: $sub-color-second;
+  margin: 30px 30px 2px 30px;
+  font-size: 3em;
+}
+
+.nav-header {
+  height: 100px;
+  margin: 20px;
+}
+
+.link_under_none_white {
+  text-decoration: none !important;
+  color: $sub-color-second;
+}
+
+.nav-username {
+  margin: auto auto 10px 25px;
+  font-size:18px;
+  margin-top: 5px;
+
+  a {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  width: 200px;
+  }
+}
+
+header {
+  background: $theme-color;
+}
+
+.drawer-hamburger {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+  margin: 5px;
+}
+
+.navbar-brand {
+  font-size: 30px;
+  font-family: arial black;
+}
