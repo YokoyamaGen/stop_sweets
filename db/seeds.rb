@@ -1,6 +1,7 @@
 EMAIL = 'test@example.com'
 PASSWORD = 'password'
 NAME = 'テストユーザ'
+COST = 700
 
 ADMIN_EMAIL = 'admin@example.com'
 ADMIN_PASSWORD = 'password'
@@ -9,6 +10,7 @@ ADMIN_PASSWORD = 'password'
 User.find_or_create_by!(email: EMAIL) do |user|
   user.password = PASSWORD
   user.name = NAME
+  user.cost = COST
   puts 'ユーザーの初期データインポートに成功しました。'
 end
 
