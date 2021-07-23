@@ -18,6 +18,8 @@ Bundler.require(*Rails.groups)
 module StopSweets
   class Application < Rails::Application
     config.load_defaults 6.1
+    # lib/autoloads ディレクトリ配下のファイルを読み込む
+    config.autoload_paths << Rails.root.join('lib/autoloads')
 
     config.i18n.default_locale = :ja
     config.time_zone = 'Asia/Tokyo'
