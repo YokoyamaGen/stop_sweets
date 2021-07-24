@@ -17,7 +17,7 @@
         </div>
         <li><%=link_to(" ホーム", root_path, class: "drawer-menu-item fa fa-home", 'aria-hidden': true)%></li> 
         <li><%=link_to(" マイページ", user_path(current_user), class: "drawer-menu-item fa fa-address-card", 'aria-hidden': true)%></li> 
-        <li><%=link_to(" ログアウト", destroy_user_session_path, method: :delete, class: "drawer-menu-item fa fa-sign-out-alt", 'aria-hidden': true)%></li> 
+        <li><%=link_to(" ログアウト", destroy_user_session_path, method: :delete, class: "drawer-menu-item fa fa-sign-out-alt", 'aria-hidden': true)%></li>
         <li><%=link_to(" つぶやき一覧", posts_path,  class: "drawer-menu-item fa fa-comment", 'aria-hidden': true)%></li> 
         <li><%=link_to(" ランキング", users_path,  class: "drawer-menu-item fa fa-trophy", 'aria-hidden': true)%></li> 
         <li><%=link_to(" ニュース一覧", informations_path,  class: "drawer-menu-item fa fa-newspaper", 'aria-hidden': true)%></li>
