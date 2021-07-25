@@ -1,24 +1,24 @@
-# README
+機能一覧
+---
+Stop Sweetsに付けた全ての機能は以下の**14機能**です。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+| No   |     機能      |
+| --- | ----------- |
+| 1    | ログイン機能 |
+| 2    | ゲストログイン機能 |
+| 3    | いいね機能 |
+| 4    | コメント機能(CRUD) |
+| 5    | 検索機能 |
+| 6    | ランキング機能 |
+| 7    | アカウント登録機能 |
+| 8    | 管理者機能 |
+| 9    | 画像アップロード機能 |
+| 10    | つぶやき機能(CRUD) |
+| 11    | マイページ機能 |
+| 12    | ニュース機能 |
+| 13    | ページネーション機能 |
+| 14    | お菓子を食べたことを申告する機能 |
+<br> 
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+ローカル環境へのインストール方法
+---
