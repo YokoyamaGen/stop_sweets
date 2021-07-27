@@ -12,12 +12,10 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    use_days = @user.calc_use_day
-    @save_money = @user.calc_save_money(use_days)
     @stop_eat_sweets_day = @user.calc_stop_day
-    use_days_month = @user.calc_use_day_month
-    @save_money_month = @user.calc_save_money(use_days_month)
+    @save_money = @user.calc_save_money(@stop_eat_sweets_day)
     @stop_eat_sweets_day_month = @user.calc_stop_day_month
+    @save_money_month = @user.calc_save_money(@stop_eat_sweets_day_month)
   end
 
   def update_eat_day
