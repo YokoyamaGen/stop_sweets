@@ -24,11 +24,12 @@ class User < ApplicationRecord
 
   # 今月のお菓子を止めた日数を算出する
   def calc_stop_day_month
-    if Date.today.beginning_of_month >= self.created_at
-      start_date = Date.today.beginning_of_month
+    start_date = if Date.today.beginning_of_month >= self.created_at
+      Date.today.beginning_of_month
     else
-      start_date = self.created_at.to_date
+      self.created_at.to_date
     end
+
     (Date.today - start_date).to_i  - self.eat_day_month
   end
 
