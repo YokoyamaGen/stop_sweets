@@ -12,28 +12,25 @@ class User < ApplicationRecord
   
   mount_uploader :image, ImageUploader
 
-  def calc_use_day
-    (Date.current - self.created_at.to_date).to_i
-  end
-
-  def calc_save_money(use_days)
-    self.cost * use_days
-  end
-
+  # サービス利用開始日からお菓子を止めた日数を算出する
   def calc_stop_day
-    self.calc_use_day - self.eat_day
+    (Date.current - self.created_at.to_date).to_i - self.eat_day
   end
 
-  def calc_use_day_month
-    if Date.today.beginning_of_month >= self.created_at
-      (Date.today - Date.today.beginning_of_month).to_i
-    else
-      (Date.today - self.created_at.to_date).to_i
-    end
+  # お菓子を止めたことによる節約金額を算出する
+  def calc_save_money(stop_eat_sweets_day)
+    self.cost * stop_eat_sweets_day
   end
 
+  # 今月のお菓子を止めた日数を算出する
   def calc_stop_day_month
-    self.calc_use_day_month - self.eat_day_month
+    start_date = if Date.today.beginning_of_month >= self.created_at
+      Date.today.beginning_of_month
+    else
+      self.created_at.to_date
+    end
+
+    (Date.today - start_date).to_i  - self.eat_day_month
   end
 
   def self.guest
