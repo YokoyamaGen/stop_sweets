@@ -67,12 +67,6 @@ RSpec.describe User, type: :model do
           expect(user.calc_save_money(2)).to eq 1000
       end
     end
-    context "calc_save_money(use_days) のデータが条件を満たすとき" do
-      let(:user) { build(:user, cost: 500) }
-      it "お菓子を辞めたことによる節約金額が想定通りになる" do
-          expect(user.calc_save_money(1)).to eq 500
-      end
-    end
     context "calc_stop_day のデータが条件を満たすとき" do
       let(:user) { build(:user, created_at: Date.current - 2, eat_day:1) }
       it "お菓子を辞めた合計日数から食べてしまった日数を差し引いた日数が想定通りになる" do
