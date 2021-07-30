@@ -1,6 +1,6 @@
 namespace :reset_eat_day_month do
   desc "usersテーブルのeat_day_monthをリセットする"
-  task reset: :environment do
+  task reset_eat_day: :environment do
     begin
       user = User.all
       user.update(eat_day_month: 0)
