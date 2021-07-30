@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, :delete_eat_day_month
+  before_action :authenticate_user!
 
   def index
     users = User.all
@@ -27,14 +27,5 @@ class UsersController < ApplicationController
       flash[:alert] = "本日はこれ以上、申告できません"
     end
     redirect_back(fallback_location: user_path(@user))
-  end
-
-  private
-
-  def delete_eat_day_month
-    if Date.today == Date.today.beginning_of_month
-      @user = User.find(params[:id])
-      @user.update!(eat_day_month: 0)
-    end
   end
 end
