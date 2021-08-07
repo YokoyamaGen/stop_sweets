@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   def index
     @q = Post.ransack(params[:q])
     @posts = @q.result.includes(:user, :likes).order(created_at: "DESC").page(params[:page]).per(PER_PAGE)
-    flash.now[:alert] = "検索に一致するつぶやきはありませんでした" if @posts.empty?
+    flash.now[:alert] = "検索に一致するつぶやきはありませんでした" if @posts.empty? && params[:q].present?
   end
 
   def new
