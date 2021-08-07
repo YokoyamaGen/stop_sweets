@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :users, controllers: {
     registrations: "users/registrations",
-    passwords: "users/passwords"
+    passwords: "users/passwords",
+    sessions: 'users/sessions'
   }
 
   root to: 'tops#index'
