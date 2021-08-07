@@ -34,6 +34,9 @@ gem 'activeadmin'
 # ログイン機能
 gem 'devise'
 
+# AmazonS3を使用
+gem 'fog-aws'
+
 # 多言語対応
 gem 'rails-i18n', '~> 6.0'
 gem 'devise-i18n'
