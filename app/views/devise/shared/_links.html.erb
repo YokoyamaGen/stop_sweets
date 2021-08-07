@@ -1,4 +1,8 @@
 <div class="form-group">
+  <%- if controller_name != 'sessions' || devise_mapping.registerable? && controller_name != 'registrations' %>
+    <%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post %><br />
+  <% end -%>
+
   <%- if controller_name != 'sessions' %>
     <%= link_to "既にアカウントをお持ちの方はこちら", new_session_path(resource_name) %><br />
   <% end -%>

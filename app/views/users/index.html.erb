@@ -26,11 +26,12 @@
               <td class="align-middle user-name-diplays">
                 <% if rank[0].image? %>
                   <%= image_tag rank[0].image.url, class: "show-user-image rounded-circle" %>
-                  <strong><%= link_to rank[0].name, user_path(rank[0]), class:"link_under_none" %></strong>
                 <% else %>
                   <%= image_tag 'no-image.png', class: "show-user-image rounded-circle" %>
-                  <strong><%= link_to rank[0].name, user_path(rank[0]), class:"link_under_none" %></strong>
                 <% end %>
+                <div class="d-inline-block">
+                  <strong><%= link_to rank[0].name, user_path(rank[0]), class:"link_under_none align-middle"%></strong>
+                </div>
               </td>
               <td class="align-middle text-center rank-info-continue">
                 <%= rank[1] %>
