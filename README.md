@@ -40,7 +40,8 @@
 URL
 ---
 
-<br>
+https://stop-sweets.herokuapp.com/
+<br><br>
 
 機能一覧
 ---
