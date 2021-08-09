@@ -88,7 +88,7 @@ ER 図
 - フレームワーク：Ruby on Rails
 - テスト：RSpec
 - フロント：HTML、CSS、JavaScript(jQuery)、Bootstrap
-- インフラ：Heroku、AWS(S3 | IAM |  CloudFront）
+- インフラ：Heroku、AWS(S3、IAM、CloudFront）
 - ソースコード管理：GitHub
 <br>
 
