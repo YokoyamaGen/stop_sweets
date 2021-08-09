@@ -30,7 +30,7 @@
 <br><br><br>
 
 - **お菓子をユーザが食べてしまった日には食べてしまったことを申告できる機能を実装することで、ランキングに変動が発生**　　<br><br>
-![demo](https://gyazo.com/2bfe0273dc00499c545d8510d255c9c8/raw)
+![demo](https://gyazo.com/715b46fb433d799f798803f9853a4471/raw)
 
 <br>
 
