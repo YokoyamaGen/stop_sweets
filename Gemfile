@@ -60,6 +60,8 @@ gem 'redcarpet'
 # シンタックスハイライト
 gem 'rouge'
 
+gem 'counter_culture'
+
 group :development, :test do
   # Rails用のテストフレームワーク
   gem 'rspec-rails'
@@ -71,6 +73,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry-byebug'
   gem 'pry-doc'
+  gem 'bullet'
 end
 
 group :development do
