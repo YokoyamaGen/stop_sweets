@@ -7,7 +7,7 @@ class PostsController < ApplicationController
 
   def index
     @q = Post.ransack(params[:q])
-    @posts = @q.result.includes(:user, :likes, :comments).order(created_at: "DESC").page(params[:page]).per(PER_PAGE)
+    @posts = @q.result.includes(:user, :likes).order(created_at: "DESC").page(params[:page]).per(PER_PAGE)
     # つぶやきが1件も投稿されていなかった場合につぶやき一覧以外のページから遷移された際にメッセージが出力されることを防ぐ
     if request.referer&.include?("posts")
       # 検索バーにキーワードが入力されている状態かつ検索結果がなかった場合にメッセージを出力させる

@@ -60,6 +60,8 @@ gem 'redcarpet'
 # シンタックスハイライト
 gem 'rouge'
 
+gem 'counter_culture'
+
 group :development, :test do
   # Rails用のテストフレームワーク
   gem 'rspec-rails'
