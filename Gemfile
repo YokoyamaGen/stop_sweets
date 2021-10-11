@@ -62,6 +62,8 @@ gem 'rouge'
 
 gem 'counter_culture'
 
+gem 'whenever', require: false
+
 group :development, :test do
   # Rails用のテストフレームワーク
   gem 'rspec-rails'
