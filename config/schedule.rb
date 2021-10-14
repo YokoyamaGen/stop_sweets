@@ -8,7 +8,7 @@ set :environment, rails_env
 
 set :output, "#{Rails.root}/log/cron.log"
 
-set :job_template, "/bin/zsh -l -c ':job'"
+set :job_template, "bash -l -c ':job'"
 job_type :rake, "export PATH=\"$HOME/.rbenv/bin:$PATH\"; eval \"$(rbenv init -)\"; cd :path && RAILS_ENV=:environment bundle exec rake :task :output"
 
 every '*/5 * * * *' do
