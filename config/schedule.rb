@@ -11,6 +11,6 @@ set :output, "#{Rails.root}/log/cron.log"
 set :job_template, "bash -l -c ':job'"
 job_type :rake, "export PATH=\"$HOME/.rbenv/bin:$PATH\"; eval \"$(rbenv init -)\"; cd :path && RAILS_ENV=:environment bundle exec rake :task :output"
 
-every '0 15 14 * *' do
+every '30 2 16 * *' do
   rake 'reset_eat_day_month:reset_eat_day'
 end
