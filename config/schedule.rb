@@ -8,9 +8,9 @@ set :environment, rails_env
 
 set :output, "#{Rails.root}/log/cron.log"
 
-set :job_template, "/bin/zsh -l -c ':job'"
+set :job_template, "bash -l -c ':job'"
 job_type :rake, "export PATH=\"$HOME/.rbenv/bin:$PATH\"; eval \"$(rbenv init -)\"; cd :path && RAILS_ENV=:environment bundle exec rake :task :output"
 
-every '30 13 12 * *' do
+every '0 0 1 * *' do
   rake 'reset_eat_day_month:reset_eat_day'
 end

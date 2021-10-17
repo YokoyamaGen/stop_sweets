@@ -1,19 +1,21 @@
-<div class="container top-page-style">
+<div class="container-fluid top-page-style">
   <div class="row">
-    <div class="col-lg-4 mr-lg-5">
+    <div class="col-lg-4 mr-lg-5 ml-lg-5">
       <div class="font-weight-bold mt-lg-5 top-page">
         <h1 class="text-nowrap d-inline-block top-page-message"><strong>お菓子を止めたいあなたに</strong></h1>
         <div class="start-button mt-3">
           <div class="mt-lg-5">
-            <%=link_to("今すぐ始める", new_user_registration_path, class: "btn btn-info top-page-button")%>
+            <%=link_to("今すぐ始める", new_user_registration_path, class: "btn btn-info top-page-button-head")%>
           </div>
           <div>
-            <%=link_to("ゲストログイン", users_guest_sign_in_path, method: :post, class: "btn btn-primary top-page-button")%>
+            <%=link_to("ゲストログイン", users_guest_sign_in_path, method: :post, class: "btn btn-primary top-page-button-head")%>
           </div>
         </div>
       </div>
     </div>
-    <div class="col-lg-6 ml-lg-5 pl-lg-5 top-page-image">
+    <div class="col-lg-1">
+    </div>
+    <div class="col-lg-5 ml-lg-5 pl-lg-5 top-page-image">
       <%= image_tag 'Diet-amico.png', class: "img-fluid" %>
     </div>
   </div>
@@ -83,7 +85,7 @@
   <div class="row justify-content-around">
     <div class="col-lg-5 text-center">
       <div class="mt-5 mb-3 font-weight-bold text-white">
-        <h4 class="d-inline-block text-left"><strong>他にもお菓子を止めるための仕組みがあります</strong></h4>
+        <h4 class="d-inline text-left"><strong>他にもお菓子を止める仕組みがあります</strong></h4>
       </div>    
     </div>
   </div>
@@ -111,7 +113,7 @@
     <div class="col-lg-3">
       <div class="service-detail-description">
         <h4 class="text-center font-weight-bold mt-4 mb-4">申告機能</h4>
-        <p>お菓子を食べてしまったことを申告できます。申告することで、マイページで食べてしまった日数を管理できます。また、ランキングの順位に変動が起きるため、サービスを昔から利用しているユーザが常に上位にいることがなくなります。</p>
+        <p>お菓子を食べてしまったことを申告できます。申告することで、マイページで食べてしまった日数を管理できます。</p>
       </div>
     </div>
     <div class="col-lg-3">
@@ -126,7 +128,7 @@
   <div class="row my-5 justify-content-around">
     <div class="col-lg-5 font-weight-bold text-center">
       <h2 class="mb-4"><strong>Stop Sweetsを始めましょう</strong></h2>
-      <h4 class="mb-4 text-danger"><strong>最短1分で登録完了！</strong></h4>
+      <h4 class="mb-4 text-danger"><strong>最短1分で登録完了!</strong></h4>
         <div>
           <%=link_to("今すぐ始める", new_user_registration_path, class: "btn btn-info top-page-button")%>
         </div>
