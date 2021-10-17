@@ -55,7 +55,7 @@ https://qiita.com/gensan64311466/items/304a08fb93ed2b6a900c
 URL
 ---
 
-https://stop-sweets.work/
+https://stop-sweets.work
 <br><br>
 
 機能一覧
