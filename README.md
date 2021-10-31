@@ -7,6 +7,12 @@
 - お菓子を止めるためのノウハウを提供
 <br>
 
+URL
+---
+
+https://stop-sweets.work
+<br><br>
+
 このアプリを作った背景
 ---
 
@@ -52,12 +58,6 @@ Capistranoを使用して、オリジナルアプリをEC2へデプロイが上�
 今回対応したエラーの詳細につきましては以下Qiitaにまとめております。
 https://qiita.com/gensan64311466/items/304a08fb93ed2b6a900c
 
-<br><br>
-
-URL
----
-
-https://stop-sweets.work
 <br><br>
 
 機能一覧
