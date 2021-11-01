@@ -41,7 +41,7 @@ $sub-color-fourth: #000000;
   margin: 0px auto;
   width: 60%;
   text-overflow: ellipsis;
-  height: 180px;
+  height: 170px;
 }
 
 .post-icon {
@@ -93,6 +93,11 @@ $sub-color-fourth: #000000;
   margin-right: 20px;
 }
 
+.tweet_content {
+  text-decoration: none;
+  color: $sub-color-fourth; 
+}
+
 @media only screen and (max-width:767px) {
   .dropdown-menu {
     min-width: 10px
@@ -123,7 +128,7 @@ table {
 
 .post-detail-content {
   border: dotted 1px silver;
-  height: 250px;
+  height: 350px;
   padding: 10px;
 }
 
@@ -153,11 +158,15 @@ table {
 
 @media only screen and (max-width:480px) {
   .post-content {
-    height: 510px;
+    height: 460px;
   }
 
   .content {
-    height: 340px;
-    width: 70%;
+    height: 280px;
+    width: 80%;
+  }
+
+  .post-detail-content {
+    height: 440px;
   }
 }
