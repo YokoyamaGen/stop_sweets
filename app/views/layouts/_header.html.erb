@@ -22,7 +22,7 @@
         <li><%=link_to(" ランキング", users_path,  class: "drawer-menu-item fa fa-trophy", 'aria-hidden': true)%></li> 
         <li><%=link_to(" ニュース一覧", informations_path,  class: "drawer-menu-item fa fa-newspaper", 'aria-hidden': true)%></li>
       <% else %>
-        <%# 非ログイン時 %>
+        <%# 未ログイン時 %>
         <div class="nav-header">
           <%=link_to("", new_user_session_path, class: "fa fa-user-circle menu-icon link_under_none_white", 'aria-hidden': true)%>
           <div class="nav-username">
@@ -37,7 +37,13 @@
     </ul>
   </nav>
   <ul class="navbar-nav ml-auto main-nav align-items-right">
-    <a class="nav navbar-brand font-weight-bold" href="/">Stop Sweets</a>
+  <% if user_signed_in? %>
+    <%# ログイン時 %>
+    <%=link_to("Stop Sweets", user_path(current_user), class: "nav navbar-brand font-weight-bold", 'aria-hidden': true)%>
+  <% else %>
+    <%# 未ログイン時 %>
+    <%=link_to("Stop Sweets", root_path, class: "nav navbar-brand font-weight-bold", 'aria-hidden': true)%>
+  <% end %> 
   </ul>
 </nav>
 
