@@ -40,13 +40,4 @@ class User < ApplicationRecord
       user.cost = 500
     end
   end
-
-  def declare_eat
-    if eat_day_updated_on != Date.today && calc_stop_day > 0
-      update!(eat_day: eat_day + 1, eat_day_month: eat_day_month + 1, eat_day_updated_on: Date.today)
-      "本日お菓子を食べたことを申告されました"
-    else
-      "本日はこれ以上、申告できません"
-    end
-  end
 end
