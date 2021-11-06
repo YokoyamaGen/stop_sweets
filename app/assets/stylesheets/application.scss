@@ -105,3 +105,15 @@ $sub-color-fourth: #000000;
   padding: 10px;
   box-shadow: 0 2px 2px 0 $sub-color-fourth
 }
+
+.alert-notice {
+  color: #004085;
+  background-color: #cce5ff;
+  border-color: #b8daff;
+}
+
+.alert-alert {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}

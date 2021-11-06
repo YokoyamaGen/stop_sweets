@@ -20,9 +20,9 @@ class UsersController < ApplicationController
 
   def update_eat_day
     @user = User.find(params[:id])
-
     if @user.eat_day_updated_on != Date.today && @user.calc_stop_day > 0
       @user.update!(eat_day: @user.eat_day + 1, eat_day_month: @user.eat_day_month + 1, eat_day_updated_on: Date.today)
+      flash[:notice] = "本日お菓子を食べたことを申告されました"
     else
       flash[:alert] = "本日はこれ以上、申告できません"
     end
