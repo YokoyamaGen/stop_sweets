@@ -98,6 +98,10 @@ $sub-color-fourth: #000000;
   color: $sub-color-fourth; 
 }
 
+.tweet_content:hover {
+  text-decoration: none;
+}
+
 @media only screen and (max-width:767px) {
   .dropdown-menu {
     min-width: 10px

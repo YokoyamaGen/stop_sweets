@@ -19,9 +19,11 @@
       </div>
     <% end %>
   </div>
-  <div class="content">
-    <%= link_to post.content, post_path(post), class: "tweet_content" %>
-  </div>
+  <%= link_to(post_path(post), class: "tweet_content") do %>
+    <div class="content">
+      <%= post.content %>
+    </div>
+  <% end %>
   <div class="post-icon">
     <span id="post-<%= post.id %>">
       <% if post.liked_by?(current_user) %>
