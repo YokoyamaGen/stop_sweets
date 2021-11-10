@@ -2,12 +2,13 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    users = User.all
-    rank_hash = Hash.new
-    users.each do |user|
-      rank_hash.merge!(user => user.calc_stop_day_month)
-    end
-    @rank_info = rank_hash.sort {|(k1, v1), (k2, v2)| v2 <=> v1 }.to_h.to_a
+    # ユーザが1ヶ月間お菓子を止めた日数のランキングを表示するSQL。
+    # ランキングの算出方法は本日 - 月初（もし、月初以降にアプリを使い始めた場合、アプリを使い始めた日） - お菓子を食べてしまった日数
+    # ランキングに表示可能なユーザ数は100名までとする。
+    @users = User.find_by_sql("SELECT *, DENSE_RANK() OVER(ORDER BY STOP_DAY DESC) AS RANK FROM 
+    (SELECT ID, NAME, IMAGE, (CASE WHEN CAST(DATE_TRUNC('MONTH', NOW()) AS DATE) >= CAST(CREATED_AT AS DATE) THEN 
+    CURRENT_DATE - CAST(DATE_TRUNC('MONTH', NOW()) AS DATE) - EAT_DAY_MONTH ELSE CURRENT_DATE - CAST(CREATED_AT AS DATE) - 
+    EAT_DAY_MONTH END) AS STOP_DAY FROM USERS) AS STOP_DAY_RANK ORDER BY RANK, NAME ASC LIMIT 100")
   end
 
   def show
