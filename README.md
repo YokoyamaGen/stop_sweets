@@ -95,21 +95,30 @@ ER 図
 
 何ができるのか
 ---
-**1. トップページ**
+### 1. トップページ
 
 ![Image from Gyazo](https://gyazo.com/57ac36869b013d3f447ed40b416336db.gif)
-
-- 最初にトップページへアクセスするとアプリの機能や使用方法を記載しています<br>
+<br>
+- 最初にトップページへアクセスするとアプリの機能や使用方法、アプリを利用することによるメリットなどを記載<br>
 - 「今すぐ始める」ボタンを押すとアカウント登録画面へ遷移<br>
 - 「ゲストログイン」ボタンを押すとマイページに遷移<br>
+- 左上のハンバーガーメニューを押すと、以下のように「アカウント登録」、「ログイン」、「ゲストログイン」ボタンなどが表示<br><br>
 
+![Image from Gyazo](https://gyazo.com/d0c062863051294444e7cb8bf943de59.gif)
+<br><br><br><br>
 
+### 2. ユーザー登録
 
+![demo](https://gyazo.com/3d3bbfa7b6790bfc974cb6dc7eed2f3d/raw)
+
+- ユーザ名、Eメール、Password、1日のお菓子にかかっている費用を入力して登録。
+- アカウント登録せずにサービスを利用したい場合は、ゲストログインボタンを押すことで、サービスを利用可能
 
 使用技術
 ---
 - 言語：Ruby
 - フレームワーク：Ruby on Rails
+- RDBMS：PostgreSQL
 - テスト：RSpec
 - フロント：HTML、CSS、JavaScript(jQuery)、Bootstrap
 - インフラ：AWS(EC2、RDS、Route53、ALB、VPC、S3、IAM、CloudFront）
