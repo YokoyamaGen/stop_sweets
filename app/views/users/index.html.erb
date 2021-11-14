@@ -12,29 +12,7 @@
           </tr>
         </thead>
         <tbody>
-          <% @users.each do |user| %>
-            <tr> 
-              <td class="align-middle text-center rank-info">
-                <%= user.rank %>
-              </td>
-              <td class="align-middle user-name-diplays">
-                <% if user.image? %>
-                  <%= image_tag user.image.url, class: "show-user-image rounded-circle" %>
-                <% else %>
-                  <%= image_tag 'no-image.png', class: "show-user-image rounded-circle" %>
-                <% end %>
-                <div class="d-inline-block">
-                  <strong><%= link_to user.name, user_path(user.id), class:"link_under_none align-middle"%></strong>
-                </div>
-              </td>
-              <td class="align-middle text-center rank-info-continue">
-                <%= user.stop_day %>
-              </td>
-              <td class="align-middle text-center">
-                <%= display_crown(user.rank) %>
-              </td>
-            </tr>
-          <% end %>
+          <%= render @users %>
         </tbody>
       </table>
     </div>
