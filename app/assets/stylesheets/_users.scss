@@ -41,3 +41,47 @@ $sub-color-fourth: #000000;
   margin: 10px 10px;
   box-shadow: 0 2px 2px 0 $sub-color-fourth
 }
+
+.mypage-content {
+  margin: 10px auto;
+  width: 80%;
+  text-overflow: ellipsis;
+  height: 170px;
+  font-size: 0.9em;
+}
+
+.mypage-user-name {
+  font-size: 1.2em;
+  margin-left: 10px;
+}
+
+.mypage-post-content {
+  border: dotted 1px silver;
+  height: 347px;
+  padding: 10px;
+}
+
+.mypage-show_image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  border: 2px solid $sub-color-third;
+  background-color: $sub-color-third;
+  box-shadow: 0 2px 2px 0 $sub-color-fourth
+}
+
+ .mypage-content-scroll{
+     width: 330px;
+    height: 347px;
+    border: solid 1px silver;
+    overflow: hidden;
+    display: inline-block;
+  }
+
+  .mypage-scroll{
+    height: 345px;
+    overflow: auto;
+  }

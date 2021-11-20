@@ -1,6 +1,6 @@
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-lg-6">
+<div class="container-fluid">
+  <div class="row justify-content-end">
+    <div class="col-lg-4 mb-lg-5">
       <% if current_user.id == @user.id %>
         <div class="text-right">
           <%=link_to("お菓子を食べた", update_eat_day_user_path(@user), method: :patch, class: "btn btn-primary mt-3")%>
@@ -60,6 +60,15 @@
         <div class="mypage-button-info">
           <%=link_to("編集", edit_user_registration_path, class: "btn btn-info mypage-button")%>
           <%=link_to("削除", user_registration_path, method: :delete, class: "btn btn-info mypage-button", data: { confirm: '本当に削除しますか？' } )%>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-lg-3 ml-lg-5 mt-2 mb-5">
+      <% if @posts.present? %>
+        <div class="mypage-content-scroll mt-lg-5">
+          <div class="mypage-scroll">
+            <%= render partial: 'post', collection: @posts %>
+          </div>
         </div>
       <% end %>
     </div>

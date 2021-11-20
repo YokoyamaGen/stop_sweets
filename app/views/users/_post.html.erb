@@ -1,0 +1,15 @@
+<div class="mypage-post-content">
+  <% if post.user.image? %>
+    <%= link_to image_tag(post.user.image.url, class: "mypage-show_image"), post_path(post) %>
+  <% else %>
+    <%= link_to image_tag('no-image.png', class: "mypage-show_image"), post_path(post) %>
+  <% end %>
+  <strong class="mypage-user-name">
+    <%= link_to post.user.name, user_path(post.user), class:"link_under_none" %>
+  </strong>
+  <%= link_to(post_path(post), class: "tweet_content") do %>
+    <div class="mypage-content">
+      <%= post.content %>
+    </div>
+  <% end %>
+</div>

@@ -22,6 +22,7 @@ class UsersController < ApplicationController
     @save_money = @user.calc_save_money(@stop_eat_sweets_day)
     @stop_eat_sweets_day_month = @user.calc_stop_day_month
     @save_money_month = @user.calc_save_money(@stop_eat_sweets_day_month)
+    @posts = Post.where(user_id: (params[:id])).includes(:user)
   end
 
   def update_eat_day
