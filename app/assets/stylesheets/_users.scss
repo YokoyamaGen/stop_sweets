@@ -73,15 +73,15 @@ $sub-color-fourth: #000000;
   box-shadow: 0 2px 2px 0 $sub-color-fourth
 }
 
- .mypage-content-scroll{
-     width: 330px;
-    height: 347px;
-    border: solid 1px silver;
-    overflow: hidden;
-    display: inline-block;
-  }
+.mypage-content-scroll{
+  width: 330px;
+  height: 347px;
+  border: solid 1px silver;
+  overflow: hidden;
+  display: inline-block;
+}
 
-  .mypage-scroll{
-    height: 345px;
-    overflow: auto;
-  }
+.mypage-scroll{
+  height: 345px;
+  overflow: auto;
+}
