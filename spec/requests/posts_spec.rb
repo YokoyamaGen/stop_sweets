@@ -127,8 +127,9 @@ RSpec.describe "Posts", type: :request do
       context "idに対応する投稿が存在しないとき" do
         let(:post_id) { 1 }
 
-        it "エラーが発生する" do
-          expect { subject }.to raise_error ActiveRecord::RecordNotFound
+        it "404.htmlが表示される" do
+          subject
+          expect(response.body).to include 'お探しのページは見つかりませんでした(404)'
         end
       end
     end

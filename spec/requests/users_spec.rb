@@ -77,8 +77,9 @@ RSpec.describe "Users", type: :request do
       context ":idに対応するユーザーが存在しないとき" do
         let(:user_id) { 1 }
 
-        it "エラーが発生する" do
-          expect { subject }.to raise_error ActiveRecord::RecordNotFound
+        it "404.htmlが表示される" do
+          subject
+          expect(response.body).to include 'お探しのページは見つかりませんでした(404)'
         end
       end
     end
