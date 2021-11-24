@@ -24,4 +24,5 @@ Rails.application.routes.draw do
   end
 
   resources :informations, only: [:index, :show]
+  match '*unmatched_route' => 'application#routing_error', via: :all
 end
