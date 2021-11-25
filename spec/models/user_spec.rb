@@ -16,6 +16,12 @@ RSpec.describe User, type: :model do
         expect(user.errors.messages[:name]).to include "を入力してください"
       end
     end
+    context "name が50文字のとき" do
+      let(:user) { build(:user, name: "a" * 50) }
+      it "保存できる" do
+        expect(subject).to eq true
+      end
+    end
     context "name が51文字以上のとき" do
       let(:user) { build(:user, name: "a" * 51) }
       it "エラーが発生する" do
@@ -30,8 +36,14 @@ RSpec.describe User, type: :model do
         expect(user.errors.messages[:email]).to include "を入力してください"
       end
     end
+    context "email が255文字のとき" do
+      let(:user) { build(:user, email: "a" * 243 + "@example.com") }
+      it "保存できる" do
+        expect(subject).to eq true
+      end
+    end
     context "email が256文字以上のとき" do
-      let(:user) { build(:user, email: "a" * 256) }
+      let(:user) { build(:user, email: "a" * 244 + "@example.com") }
       it "エラーが発生する" do
         expect(subject).to eq false
         expect(user.errors.messages[:email]).to include "は255文字以内で入力してください"
