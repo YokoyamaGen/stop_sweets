@@ -84,6 +84,11 @@ RSpec.describe "Comments", type: :request do
       context "idに対応するコメントが存在しないとき" do
         let(:comment_id) { 1 }
 
+        it "ステータスコード404が返ってくる" do
+          subject
+          expect(response).to have_http_status(404)
+        end
+
         it "404.htmlが表示される" do
           subject
           expect(response.body).to include 'お探しのページは見つかりませんでした(404)'

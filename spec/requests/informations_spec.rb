@@ -36,6 +36,20 @@ RSpec.describe "Informations", type: :request do
           expect(response.body).to include information.content
         end
       end
+
+      context "ニュースが存在しないとき" do
+        let(:information_id) { 1 }
+
+        it "ステータスコード404が返ってくる" do
+          subject
+          expect(response).to have_http_status(404)
+        end
+
+        it "404.htmlが表示される" do
+          subject
+          expect(response.body).to include 'お探しのページは見つかりませんでした(404)'
+        end
+      end
     end
   end
 

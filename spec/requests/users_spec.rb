@@ -75,7 +75,11 @@ RSpec.describe "Users", type: :request do
       end
 
       context ":idに対応するユーザーが存在しないとき" do
-        let(:user_id) { 1 }
+        let(:user_id) { 100 }
+        it "ステータスコード404が返ってくる" do
+          subject
+          expect(response).to have_http_status(404)
+        end
 
         it "404.htmlが表示される" do
           subject

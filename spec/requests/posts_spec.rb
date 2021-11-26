@@ -126,6 +126,10 @@ RSpec.describe "Posts", type: :request do
 
       context "idに対応する投稿が存在しないとき" do
         let(:post_id) { 1 }
+        it "ステータスコード404が返ってくる" do
+          subject
+          expect(response).to have_http_status(404)
+        end
 
         it "404.htmlが表示される" do
           subject
