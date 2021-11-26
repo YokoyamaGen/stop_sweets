@@ -16,6 +16,12 @@ RSpec.describe Post, type: :model do
         expect(post.errors.messages[:content]).to include "を入力してください"
       end
     end
+    context "content  が140文字のとき" do
+      let(:post) { build(:post, content: "a" * 140) }
+      it "保存できる" do
+        expect(subject).to eq true
+      end
+    end
     context "content  が141文字以上のとき" do
       let(:post) { build(:post, content: "a" * 141) }
       it "エラーが発生する" do
