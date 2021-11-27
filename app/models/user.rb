@@ -17,9 +17,14 @@ class User < ApplicationRecord
     (Date.current - self.created_at.to_date).to_i - self.eat_day
   end
 
-  # お菓子を止めたことによる節約金額を算出する
-  def calc_save_money(stop_eat_sweets_day)
-    self.cost * stop_eat_sweets_day
+  # サービス利用開始時からお菓子を止めたことによる節約金額を算出する
+  def save_money
+    self.cost * calc_stop_day
+  end
+
+  # 1ヶ月間のお菓子を止めたことによる節約金額を算出する
+  def save_money_month
+    self.cost * calc_stop_day_month
   end
 
   # 今月のお菓子を止めた日数を算出する
