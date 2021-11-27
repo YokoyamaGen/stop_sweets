@@ -60,7 +60,7 @@ RSpec.describe "Users", type: :request do
 
         it "save_money が表示されている" do
           subject
-          expect(response.body).to include user.calc_save_money(user.calc_stop_day).to_s
+          expect(response.body).to include user.save_money.to_s
         end
 
         it "stop_eat_sweets_day_month が表示されている" do
@@ -70,7 +70,7 @@ RSpec.describe "Users", type: :request do
 
         it "save_money_month が表示されている" do
           subject
-          expect(response.body).to include user.calc_save_money(user.calc_stop_day_month).to_s
+          expect(response.body).to include user.save_money_month.to_s
         end
       end
 
