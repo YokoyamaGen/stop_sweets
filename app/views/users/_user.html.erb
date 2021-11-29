@@ -3,11 +3,7 @@
     <%= user.rank %>
   </td>
   <td class="align-middle user-name-diplays">
-    <% if user.image? %>
-      <%= image_tag user.image.url, class: "show-user-image rounded-circle" %>
-    <% else %>
-      <%= image_tag 'no-image.png', class: "show-user-image rounded-circle" %>
-    <% end %>
+    <%= display_user_icon(user, "show-user-image", "rounded-circle") %>
     <div class="d-inline-block">
       <strong><%= link_to user.name, user_path(user.id), class:"link_under_none align-middle"%></strong>
     </div>

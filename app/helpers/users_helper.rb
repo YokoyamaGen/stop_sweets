@@ -10,10 +10,11 @@ module UsersHelper
     end
   end
 
-  def check_user_rank(rank, i, before_user_continue_day, rank_status)
-    if i == 1 || @before_user_continue_day != rank[1]
-      @rank_status = i
-      @before_user_continue_day = rank[1]
+  def display_user_icon(instance, icon_property, icon_property2="")
+    if instance.image?
+      image_tag instance.image.url, class: "#{icon_property} #{icon_property2}"
+    else
+      image_tag 'no-image.png', class: "#{icon_property} #{icon_property2}"
     end
   end
 end

@@ -1,10 +1,5 @@
 <div class="post-detail-content">
-  <% if comment.user.image? %>
-    <%= image_tag comment.user.image.url, class: "show_image" %>
-  <% else %>
-    <%= image_tag 'no-image.png', class: "show_image" %>
-  <% end %>
-
+  <%= display_user_icon_post(comment.user, "show_image", user_path(comment.user)) %>
   <strong class="user-name">
     <%= link_to comment.user.name, user_path(comment.user), class:"link_under_none" %>
   </strong>
