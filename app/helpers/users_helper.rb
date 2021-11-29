@@ -10,11 +10,11 @@ module UsersHelper
     end
   end
 
-  def display_user_icon(instance, icon_property)
+  def display_user_icon(instance, icon_property, icon_property2="")
     if instance.image?
-      image_tag instance.image.url, class: "#{icon_property} rounded-circle"
+      image_tag instance.image.url, class: "#{icon_property} #{icon_property2}"
     else
-      image_tag 'no-image.png', class: "#{icon_property} rounded-circle"
+      image_tag 'no-image.png', class: "#{icon_property} #{icon_property2}"
     end
   end
 end

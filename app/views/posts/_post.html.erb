@@ -1,10 +1,5 @@
 <div class="post-content">
-  <% if post.user.image? %>
-    <%= link_to image_tag(post.user.image.url, class: "show_image"), post_path(post) %>
-  <% else %>
-    <%= link_to image_tag('no-image.png', class: "show_image"), post_path(post) %>
-  <% end %>
-
+  <%= display_user_icon_post(post.user, "show_image", user_path(post.user)) %>
   <strong class="user-name">
     <%= link_to post.user.name, user_path(post.user), class:"link_under_none" %>
   </strong>
