@@ -12,9 +12,12 @@ class User < ApplicationRecord
   
   mount_uploader :image, ImageUploader
 
+  # 当日中にお菓子を止めた日数をカウントする
+  COUNT_STOPDAY_TODAY = 1
+
   # サービス利用開始日からお菓子を止めた日数を算出する
   def calc_stop_day
-    (Date.current - self.created_at.to_date).to_i - self.eat_day
+    (Date.current - self.created_at.to_date).to_i + COUNT_STOPDAY_TODAY - self.eat_day
   end
 
   # サービス利用開始時からお菓子を止めたことによる節約金額を算出する
@@ -35,7 +38,7 @@ class User < ApplicationRecord
       self.created_at.to_date
     end
 
-    (Date.today - start_date).to_i  - self.eat_day_month
+    (Date.today - start_date).to_i  + COUNT_STOPDAY_TODAY - self.eat_day_month
   end
 
   def self.guest
