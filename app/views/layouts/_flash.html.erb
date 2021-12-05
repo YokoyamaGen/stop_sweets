@@ -3,8 +3,8 @@
     <div class="col-lg-3"></div>
     <div class="col-lg-6">
         <% flash.each do |key, value| %>
-          <div class="alert alert-<%= key %> alert-dismissible fade show alert-signup" role="alert">
-            <%= value %>
+          <div id="flash-message" class="alert alert-<%= key %> alert-dismissible fade show alert-signup" role="alert">
+            <%= value.html_safe %>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
