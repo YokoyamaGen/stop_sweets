@@ -31,25 +31,25 @@
           <th class="h5"><strong>サービス利用開始からお菓子を止めた日数</strong></th>
         </tr>
         <tr>
-          <th class="font-weight-normal" id="mypage-col1"><%= @user.calc_stop_day %>日</th>
+          <th class="font-weight-normal change-color"><%= @user.calc_stop_day %>日</th>
         </tr>
         <tr>
           <th class="h5"><strong>サービス利用開始から節約した金額</strong></th>
         </tr>
         <tr>
-          <th class="font-weight-normal" id="mypage-col2"><%= @user.save_money %>円</th>
+          <th class="font-weight-normal change-color"><%= @user.save_money %>円</th>
         </tr>
         <tr>
           <th class="h5"><strong>今月のお菓子を止めた日数</strong></th>
         </tr>
         <tr>
-          <th class="font-weight-normal" id="mypage-col3"><%= @user.calc_stop_day_month %>日</th>
+          <th class="font-weight-normal change-color"><%= @user.calc_stop_day_month %>日</th>
         </tr>
         <tr>
           <th class="h5"><strong>今月の節約した金額</strong></th>
         </tr>
         <tr>
-          <th class="font-weight-normal" id="mypage-col4"><%= @user.save_money_month %>円</th>
+          <th class="font-weight-normal change-color"><%= @user.save_money_month %>円</th>
         </tr>
       </table>
       <% if current_user.id == @user.id %>
@@ -69,4 +69,5 @@
     </div>
   </div>
 </div>
+<%= javascript_pack_tag 'show' %>
 
