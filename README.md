@@ -160,7 +160,7 @@ ER 図
 
 ### マイページ
 
-![Image from Gyazo](https://gyazo.com/5dd8e2246e5c684b4795191f45ae7a93.gif)
+![Image from Gyazo](https://gyazo.com/ead3ad361acf489c6143a88f2224d753.gif)
 <br>
 
 - お菓子を止めた日数や節約金額などを確認可能
