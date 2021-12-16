@@ -4,12 +4,14 @@
       <div class="font-weight-bold mt-lg-5 top-page">
         <h1 class="text-nowrap d-inline-block top-page-message"><strong>お菓子を止めたいあなたに</strong></h1>
         <div class="start-button mt-3">
-          <div class="mt-lg-5">
-            <%=link_to("今すぐ始める", new_user_registration_path, class: "btn btn-info top-page-button-head")%>
-          </div>
-          <div>
-            <%=link_to("ゲストログイン", users_guest_sign_in_path, method: :post, class: "btn btn-primary top-page-button-head")%>
-          </div>
+          <% if !user_signed_in? %>
+            <div class="mt-lg-5">
+              <%=link_to("今すぐ始める", new_user_registration_path, class: "btn btn-info top-page-button-head")%>
+            </div>
+            <div>
+              <%=link_to("ゲストログイン", users_guest_sign_in_path, method: :post, class: "btn btn-primary top-page-button-head")%>
+            </div>
+           <% end %> 
         </div>
       </div>
     </div>
@@ -127,15 +129,16 @@
 <div class="container">
   <div class="row my-5 justify-content-around">
     <div class="col-lg-5 font-weight-bold text-center">
-      <h2 class="mb-4"><strong>Stop Sweetsを始めましょう</strong></h2>
-      <h4 class="mb-4 text-danger"><strong>最短1分で登録完了!</strong></h4>
-        <div>
-          <%=link_to("今すぐ始める", new_user_registration_path, class: "btn btn-info top-page-button")%>
-        </div>
-        <div>
-          <%=link_to("ゲストログイン", users_guest_sign_in_path, method: :post, class: "btn btn-primary top-page-button")%>
-        </div>
-      </div>
+      <% if !user_signed_in? %>
+        <h2 class="mb-4"><strong>Stop Sweetsを始めましょう</strong></h2>
+        <h4 class="mb-4 text-danger"><strong>最短1分で登録完了!</strong></h4>
+          <div>
+            <%=link_to("今すぐ始める", new_user_registration_path, class: "btn btn-info top-page-button")%>
+          </div>
+          <div>
+            <%=link_to("ゲストログイン", users_guest_sign_in_path, method: :post, class: "btn btn-primary top-page-button")%>
+          </div>
+      <% end %>         
     </div>
   </div>
 </div>
