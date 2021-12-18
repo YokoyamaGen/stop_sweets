@@ -52,7 +52,7 @@
           <th class="font-weight-normal change-color"><%= @user.save_money_month %>円</th>
         </tr>
       </table>
-      <% if current_user.id == @user.id %>
+      <% if current_user.id == @user.id && @user.name != "ゲストユーザ" %>
         <div class="mypage-button-info">
           <%=link_to("編集", edit_user_registration_path, class: "btn btn-info mypage-button")%>
           <%=link_to("削除", user_registration_path, method: :delete, class: "btn btn-info mypage-button", data: { confirm: '本当に削除しますか？' } )%>
