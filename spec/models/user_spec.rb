@@ -29,6 +29,21 @@ RSpec.describe User, type: :model do
         expect(user.errors.messages[:name]).to include "は50文字以内で入力してください"
       end
     end
+    context "name(両方が小文字) が重複するとき" do
+      let(:user) { build(:user, name: "hogehoge") }
+      it "エラーが発生する" do
+        create(:user, name: "hogehoge")
+        expect(subject).to eq false
+        expect(user.errors.messages[:name]).to include "はすでに存在します"
+      end
+    end
+    context "name(片方が大文字、片方が小文字) が重複するとき" do
+      let(:user) { build(:user, name: "HOGEHOGE") }
+      it "保存できる" do
+        create(:user, name: "hogehoge")
+        expect(subject).to eq true
+      end
+    end
     context "email が空のとき" do
       let(:user) { build(:user, email: "") }
       it "エラーが発生する" do
@@ -47,6 +62,22 @@ RSpec.describe User, type: :model do
       it "エラーが発生する" do
         expect(subject).to eq false
         expect(user.errors.messages[:email]).to include "は255文字以内で入力してください"
+      end
+    end
+    context "email(両方が小文字) が重複するとき" do
+      let(:user) { build(:user, email: "aaron@example.com") }
+      it "エラーが発生する" do
+        create(:user, email: "aaron@example.com")
+        expect(subject).to eq false
+        expect(user.errors.messages[:email]).to include "はすでに存在します"
+      end
+    end
+    context "email(片方が大文字、片方が小文字) が重複するとき" do
+      let(:user) { build(:user, email: "AARON@EXAMPLE.COM") }
+      it "エラーが発生する" do
+        create(:user, email: "aaron@example.com")
+        expect(subject).to eq false
+        expect(user.errors.messages[:email]).to include "はすでに存在します"
       end
     end
     context "cost が負の整数のとき" do
