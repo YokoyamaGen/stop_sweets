@@ -178,7 +178,7 @@ ER 図
 - RDBMS：PostgreSQL
 - テスト：RSpec
 - フロント：HTML、CSS、JavaScript(jQuery)、Bootstrap
-- インフラ：AWS(EC2、RDS、Route53、ALB、VPC、S3、IAM、CloudFront）
+- インフラ：AWS(EC2、RDS、Route53、ALB、VPC、S3、IAM、CloudFront、ACM）
 - ソースコード管理：GitHub
 <br>
 
