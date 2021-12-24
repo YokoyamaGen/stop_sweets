@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
     # サインアップ時のストロングパラメータ
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :cost])
     # アカウント編集時のストロングパラメータ
-    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :image, :cost])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :image, :cost, :profile])
   end
 
   private
