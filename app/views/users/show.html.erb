@@ -59,7 +59,14 @@
         </div>
       <% end %>
     </div>
-    <div class="col-lg-3 ml-lg-5 mt-5 mb-5">
+    <div class="col-lg-3 ml-lg-5 mt-1 mb-5">
+      <% if @user.profile.present? %>
+        <h5 class=" mt-lg-5"><strong>プロフィール</strong></h5>
+        <div class="mypage-profile">
+          <%= @user.profile %>
+        </div>
+        <br>
+      <% end %>
       <% if @posts.present? %>
         <h5 class=" mt-lg-5"><strong>つぶやき一覧</strong></h5>
         <div class="mypage-content-scroll">

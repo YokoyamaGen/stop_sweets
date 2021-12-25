@@ -3,6 +3,7 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { maximum: 50 }, uniqueness: true
   validates :email, length: { maximum: 255 }, uniqueness: true
   validates :cost, numericality: { greater_than_or_equal_to: 0, only_integer: true }
+  validates :profile, length: { maximum: 160 }
 
   has_many :posts, dependent: :destroy
   has_many :likes, dependent: :destroy

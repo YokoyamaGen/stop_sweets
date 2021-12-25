@@ -72,6 +72,11 @@ RSpec.describe "Users", type: :request do
           subject
           expect(response.body).to include user.save_money_month.to_s
         end
+
+        it "profile が表示されている" do
+          subject
+          expect(response.body).to include user.profile.to_s
+        end
       end
 
       context ":idに対応するユーザーが存在しないとき" do

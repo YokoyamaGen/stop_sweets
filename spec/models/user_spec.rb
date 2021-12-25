@@ -101,6 +101,19 @@ RSpec.describe User, type: :model do
         expect(user.errors.messages[:cost]).to include "は整数で入力してください"
       end
     end
+    context "profile が160文字のとき" do
+      let(:user) { build(:user, profile: "a" * 160) }
+      it "保存できる" do
+        expect(subject).to eq true
+      end
+    end
+    context "profile が161文字以上のとき" do
+      let(:user) { build(:user, profile: "a" * 161) }
+      it "エラーが発生する" do
+        expect(subject).to eq false
+        expect(user.errors.messages[:profile]).to include "は160文字以内で入力してください"
+      end
+    end
   end
 
   describe "インスタンスメソッド" do

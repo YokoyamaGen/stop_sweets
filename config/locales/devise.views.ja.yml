@@ -28,6 +28,7 @@ ja:
         name: ユーザ名
         cost: １日のお菓子にかかっている費用
         image: プロフィール画像
+        profile: プロフィール
       admin_user: *user
     models:
       user: ユーザ
