@@ -1,38 +1,11 @@
 <div class="post-content">
   <%= display_user_icon_post(post.user, "show_image", user_path(post.user)) %>
-  <strong class="user-name">
-    <%= link_to post.user.name, user_path(post.user), class:"link_under_none" %>
-  </strong>
-  <% if current_user.id == post.user_id %>
-    <div class="dropdown">
-      <button class="btn fa fa-ellipsis-v" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      </button>
-      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-        <%= link_to "編集", edit_post_path(post), class:"dropdown-item" %>
-        <div class="dropdown-divider"></div>
-        <%= link_to "削除", post_path(post), method: :delete, data: { confirm: "削除しますか？" }, class:"dropdown-item" %>
-      </div>
-    </div>
-  <% end %>
+  <%= render 'post_header', post: post %>
   <%= link_to(post_path(post), class: "tweet_content") do %>
     <div class="content">
       <%= post.content %>
     </div>
   <% end %>
-  <div class="tweet-time">
-    <%= l post.updated_at %>
-  </div>
-  <div class="post-icon">
-    <span id="post-<%= post.id %>">
-      <% if post.liked_by?(current_user) %>
-        <%= render "like", post: post %>
-      <% else %>
-        <%= render "dislike", post: post %>
-      <% end %>
-    </span>
-  </div>
-  <div class="comment-icon">
-    <%= link_to "", post_path(post), class:"fa fa-comment fa-lg comment-style" %>
-    <%= post.comments_count %>
-  </div>
+
+  <%= render 'post_footer', post: post %>
 </div>
