@@ -11,7 +11,6 @@
         </div>
         <%= render 'post_footer', post: @post %>
       </div>
-
       <%= render partial: 'comment', collection: @post.comments %>
       <%= link_to("戻る", posts_path,  class: "btn btn-secondary btn-lg btn-block btn-back mt-4") %>
     </div>
