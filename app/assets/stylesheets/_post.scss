@@ -22,7 +22,7 @@ $sub-color-fourth: #000000;
 
 .post-content {
   border: dotted 1px silver;
-  height: 350px;
+  height: 380px;
   margin-top: 10px;
   padding: 10px;
 }
@@ -41,12 +41,20 @@ $sub-color-fourth: #000000;
   margin: 0px auto;
   width: 60%;
   text-overflow: ellipsis;
-  height: 170px;
+  height: 200px;
+}
+
+.tweet-time {
+  display: inline;
+  float: left;
+  font-size: 18px;
+  color: rgba(0,0,0,0.6);
+  padding-left: 5px;
 }
 
 .post-icon {
   display: inline;
-  float:right
+  float: right;
 }
 
 .dislike-info {
@@ -132,7 +140,7 @@ table {
 
 .post-detail-content {
   border: dotted 1px silver;
-  height: 350px;
+  height: 380px;
   padding: 10px;
 }
 
@@ -171,6 +179,6 @@ table {
   }
 
   .post-detail-content {
-    height: 440px;
+    height: 450px;
   }
 }

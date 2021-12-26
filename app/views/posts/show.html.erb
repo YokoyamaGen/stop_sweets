@@ -5,39 +5,12 @@
       <%= link_to "コメントする", new_post_comments_path(@post), class: "btn btn-primary btn-lg btn-block btn-twitter" %>
       <div class="post-detail-content">
         <%= display_user_icon_post(@post.user, "show_image", user_path(@post.user)) %>
-        <strong class="user-name">
-          <%= link_to @post.user.name, user_path(@post.user), class:"link_under_none" %>
-        </strong>
-        <% if current_user.id == @post.user_id %>
-          <div class="dropdown">
-            <button class="btn fa fa-ellipsis-v" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            </button>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-              <%= link_to "編集", edit_post_path(@post), class:"dropdown-item" %>
-              <div class="dropdown-divider"></div>
-              <%= link_to "削除", post_path(@post), method: :delete, data: { confirm: "削除しますか？" }, class:"dropdown-item" %>
-            </div>
-          </div>
-        <% end %>
+        <%= render 'post_header', post: @post %>
         <div class="content">
           <p><%= @post.content %></p>
         </div>
-
-        <div class="post-icon">
-          <span id="post-<%= @post.id %>">
-            <% if @post.liked_by?(current_user) %>
-              <%= render "like", post: @post %>
-            <% else %>
-              <%= render "dislike", post: @post %>
-            <% end %>
-          </span>
-        </div>
-        <div class="comment-icon">
-          <span class="fa fa-comment fa-lg comment-style"></span>
-          <%= @post.comments.count %>
-        </div>
+        <%= render 'post_footer', post: @post %>
       </div>
-
       <%= render partial: 'comment', collection: @post.comments %>
       <%= link_to("戻る", posts_path,  class: "btn btn-secondary btn-lg btn-block btn-back mt-4") %>
     </div>
