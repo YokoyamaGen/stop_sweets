@@ -30,6 +30,11 @@ RSpec.describe "Posts", type: :request do
           subject
           expect(response.body).to include post.content
         end
+
+        it "updated_at が表示されている" do
+          subject
+          expect(response.body).to include post.updated_at.strftime("%Y/%m/%d")
+        end
       end
     end
 
@@ -102,6 +107,11 @@ RSpec.describe "Posts", type: :request do
         it "content が表示されている" do
           subject
           expect(response.body).to include post.content
+        end
+
+        it "updated_at が表示されている" do
+          subject
+          expect(response.body).to include post.updated_at.strftime("%Y/%m/%d")
         end
       end
     end
