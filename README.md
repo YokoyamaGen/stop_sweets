@@ -152,7 +152,7 @@ ER 図
 
 ### ニュース一覧
 
-![Image from Gyazo](https://gyazo.com/4fd173be68a24e9371cd86a0b21e8a61.gif)
+![Image from Gyazo](https://gyazo.com/5eabf4f1504b574a59d1e9bdc11f78df.gif)
 <br>
 
 - お菓子を止めるために効率的な方法を学ぶことが可能<br><br><br><br>
