@@ -7,5 +7,5 @@ jobs:
       - checkout
       - run: bundle install
       - run:
-        name: ruby test
-        command: bundle exec rspec
+          name: ruby test
+          command: bundle exec rspec
