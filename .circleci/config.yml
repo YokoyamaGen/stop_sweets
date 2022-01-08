@@ -3,6 +3,11 @@ jobs:
   build:
     docker:
       - image: circleci/ruby:2.7.2
+      - image: circleci/postgres:13.2
+       environment:
+          POSTGRES_DB: stop_sweets_test
+          POSTGRES_USER: postgres
+          POSTGRES_HOST_AUTH_METHOD: trust
     steps:
       - checkout
       - restore_cache:
