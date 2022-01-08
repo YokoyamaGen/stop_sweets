@@ -5,7 +5,13 @@ jobs:
       - image: circleci/ruby:2.7.2
     steps:
       - checkout
+      - restore_cache:
+          key: Gemfile-v1-{{ checksum "Gemfile.lock" }}
       - run: bundle install
+      - save_cache:
+          key: Gemfile-v1-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor
       - run:
           name: ruby test
           command: bundle exec rspec
