@@ -6,6 +6,6 @@ jobs:
     steps:
       - checkout
       - run: bundle install
-       - run:
-          name: ruby test
-          command: bundle exec rspec
+      - run:
+        name: ruby test
+        command: bundle exec rspec
