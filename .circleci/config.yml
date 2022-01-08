@@ -7,7 +7,9 @@ jobs:
         environment:
           POSTGRES_DB: stop_sweets_test
           POSTGRES_USER: postgres
-          DATABASE_PASSWORD: postgres
+          POSTGRES_PASSWORD: postgres
+    environment:
+      DATABASE_PASSWORD: postgres
     steps:
       - checkout
       - restore_cache:
