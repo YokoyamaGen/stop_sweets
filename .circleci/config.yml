@@ -4,4 +4,8 @@ jobs:
     docker:
       - image: circleci/ruby:2.7.2
     steps:
-      - run: echo "Hello World"
+      - checkout
+      - run: bundle install
+       - run:
+          name: ruby test
+          command: bundle exec rspec
