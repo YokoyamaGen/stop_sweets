@@ -12,6 +12,7 @@ jobs:
       APP_DATABASE_HOST: "127.0.0.1"
       RAILS_ENV: test
       DATABASE_PASSWORD: postgres
+      RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
     steps:
       - checkout
       - restore_cache:
