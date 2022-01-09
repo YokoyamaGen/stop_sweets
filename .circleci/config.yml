@@ -14,11 +14,11 @@ jobs:
       - checkout
       - restore_cache:
           key: Gemfile-v1-{{ checksum "Gemfile.lock" }}
-      - run: bundle install
+      - run: bundle install --path vendor/bundle
       - save_cache:
           key: Gemfile-v1-{{ checksum "Gemfile.lock" }}
           paths:
-            - vendor
+            - vendor/bundle
       - run:
           name: ruby test
           command: bundle exec rspec
