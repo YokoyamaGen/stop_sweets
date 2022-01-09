@@ -16,7 +16,10 @@ jobs:
       - checkout
       - restore_cache:
           key: Gemfile-v1-{{ checksum "Gemfile.lock" }}
-      - run: bundle install --path vendor/bundle
+      - run:
+          name: プロジェクトローカルにGemをインストールするよう設定
+          command: bundle config set --local path 'vendor/bundle'
+      - run: bundle install
       - save_cache:
           key: Gemfile-v1-{{ checksum "Gemfile.lock" }}
           paths:
