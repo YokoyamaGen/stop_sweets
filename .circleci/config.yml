@@ -1,29 +1,48 @@
 version: 2.1
+orbs:
+  ruby: circleci/ruby@1.1.2
+
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.7.2
+      - image: circleci/ruby:2.7
+    working_directory: ~/stop_sweets/src
+    steps:
+      - checkout:
+          path: ~/stop_sweets
+      - ruby/install-deps
+
+  test:
+    docker:
+      - image: circleci/ruby:2.7
       - image: circleci/postgres:13.2
         environment:
           POSTGRES_DB: stop_sweets_test
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
     environment:
+      BUNDLE_JOBS: "3"
+      BUNDLE_RETRY: "3"
       APP_DATABASE_HOST: "127.0.0.1"
       RAILS_ENV: test
       DATABASE_PASSWORD: postgres
+    working_directory: ~/stop_sweets/src
     steps:
-      - checkout
-      - restore_cache:
-          key: Gemfile-v1-{{ checksum "Gemfile.lock" }}
+      - checkout:
+          path: ~/stop_sweets
+      - ruby/install-deps
       - run:
-          name: プロジェクトローカルにGemをインストールするよう設定
-          command: bundle config set --local path 'vendor/bundle'
-      - run: bundle install
-      - save_cache:
-          key: Gemfile-v1-{{ checksum "Gemfile.lock" }}
-          paths:
-            - vendor/bundle
+          name: Database setup
+          command: bundle exec rails db:migrate
       - run:
-          name: ruby test
+          name: test
           command: bundle exec rspec
+
+workflows:
+  version: 2
+  build_test_and_deploy:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
