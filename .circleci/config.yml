@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.7.2
+      - image: circleci/ruby:2.7.2-node
       - image: circleci/postgres:13.2
         environment:
           POSTGRES_DB: stop_sweets_test
@@ -24,6 +24,7 @@ jobs:
           command: |
             gem install bundler -v 2.2.11
             bundle install --jobs=4 --retry=3
+      - run: yarn install
       - save_cache:
           key: Gemfile-v1-{{ checksum "Gemfile.lock" }}
           paths:
@@ -32,11 +33,4 @@ jobs:
       - run: bundle exec rake db:schema:load
       - run:
           name: run tests
-          command: |
-            mkdir /tmp/test-results
-            bundle exec rspec \
-              --profile 10 \
-              --out /tmp/test_results/rspec.xml \
-              --backtrace \
-              --format progress \
-              $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
+          command: bundle exec rspec
