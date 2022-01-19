@@ -34,3 +34,23 @@ jobs:
       - run:
           name: run tests
           command: bundle exec rspec
+
+  deploy:
+    docker:
+      - image: circleci/ruby:2.7.2-node
+    steps:
+      - add_ssh_keys:
+          fingerprints: "23:3a:d8:a5:c8:eb:64:f9:3f:aa:d8:0b:0d:60:fa:50"
+
+workflows:
+  version: 2
+  build_deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - develop
