@@ -63,7 +63,7 @@
 server "13.115.210.86", user: "stop_sweets_user", roles: %w{app db web}
 
 set :ssh_options, {
-  keys: [ENV.fetch('PRODUCTION_SSH_KEY').to_s],
+  keys: %w(~/.ssh/id_rsa_233ad8a5c8eb64f93faad80b0d60fa50),
   forward_agent: true,
   auth_methods: %w(publickey),
 }
