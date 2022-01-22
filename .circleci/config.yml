@@ -38,6 +38,9 @@ jobs:
   deploy:
     docker:
       - image: circleci/ruby:2.7.2-node
+    environment:
+      RAILS_ENV: production
+      DATABASE_PASSWORD: postgres
     steps:
       - checkout
       - run:
