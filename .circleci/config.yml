@@ -38,9 +38,6 @@ jobs:
   deploy:
     docker:
       - image: circleci/ruby:2.7.2-node
-    environment:
-      RAILS_ENV: production
-      DATABASE_PASSWORD: postgres
     steps:
       - checkout
       - run:
@@ -53,7 +50,7 @@ jobs:
       - run: cd /home/circleci/project
       - deploy:
           name: Capistrano deploy
-          command: bundle exec cap production deploy
+          command: bundle exec cap production deploy --trace --dry-run
 
 workflows:
   version: 2.1
