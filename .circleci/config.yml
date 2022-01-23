@@ -7,7 +7,7 @@ jobs:
         environment:
           POSTGRES_DB: stop_sweets_test
           POSTGRES_USER: postgres
-          POSTGRES_PASSWORD:  postgres
+          POSTGRES_PASSWORD: postgres
     environment:
       APP_DATABASE_HOST: "127.0.0.1"
       RAILS_ENV: test
