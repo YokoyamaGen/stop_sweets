@@ -38,8 +38,6 @@ jobs:
   deploy:
     docker:
       - image: circleci/ruby:2.7.2-node
-    environment:
-      DATABASE_PASSWORD: postgres
     steps:
       - checkout
       - run:
@@ -49,6 +47,7 @@ jobs:
             bundle install --jobs=4 --retry=3
       - add_ssh_keys:
           fingerprints: "23:3a:d8:a5:c8:eb:64:f9:3f:aa:d8:0b:0d:60:fa:50"
+      - run: export DATABASE_PASSWORD=postgres
       - run:
           name: Capistrano deploy
           command: bundle exec cap production deploy
