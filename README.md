@@ -180,8 +180,8 @@ ER 図
 - テスト：RSpec
 - フロント：HTML、CSS、JavaScript(jQuery)、Bootstrap
 - インフラ：AWS(EC2、RDS、Route53、ALB、VPC、S3、IAM、CloudFront、ACM）
-- ソースコード管理：GitHub
-- CI/CD：CircleCi
+- ソースコード管理：Github
+- CI/CD：CircleCI
 - その他：Docker
 <br>
 
