@@ -197,7 +197,8 @@ ER 図
 ```
 $ git clone https://github.com/YokoyamaGen/stop_sweets.git
 $ cd stop_sweets
-$ bundle install
+$ docker-compose up -d
+$ docker-compose exec web bash
 $ rails db:create
 $ rails db:migrate
 $ rails db:seed
