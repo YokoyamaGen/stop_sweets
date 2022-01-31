@@ -7,4 +7,6 @@ RUN apt-get update && apt-get install -y \
          yarn
 WORKDIR /stop_sweets
 COPY Gemfile Gemfile.lock /stop_sweets/
-RUN bundle install
+RUN gem update --system \
+         && gem install bundler -v 2.2.11 \
+         && bundle install

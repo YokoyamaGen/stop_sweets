@@ -89,7 +89,7 @@ ActiveRecord::Schema.define(version: 2021_12_24_121311) do
     t.integer "cost", default: 0
     t.string "image"
     t.integer "eat_day", default: 0
-    t.date "eat_day_updated_on", default: "2022-01-03", null: false
+    t.date "eat_day_updated_on", default: "2022-01-30", null: false
     t.integer "eat_day_month", default: 0
     t.text "profile"
     t.index ["email"], name: "index_users_on_email", unique: true
