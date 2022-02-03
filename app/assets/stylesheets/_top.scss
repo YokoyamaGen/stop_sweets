@@ -105,3 +105,11 @@ $sub-color-fourth: #000000;
   margin-top: 100px;
   margin-bottom: 100px;
 }
+
+.footer-page-style {
+  background-color: $theme-color;
+  height: 65px;
+  bottom: 0;
+  color: $sub-color-second;
+  font-size: 18px;
+}
