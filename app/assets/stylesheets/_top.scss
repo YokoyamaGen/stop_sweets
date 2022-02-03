@@ -3,7 +3,7 @@ $sub-color: #fb0050;
 $sub-color-second: #FFF;
 $sub-color-fourth: #000000;
 
-.top-page-message, .top-page-submessage {
+.top-page-message {
   background-color: $theme-color;
   color: $sub-color-second;
   font-size: 45px;
@@ -27,11 +27,6 @@ $sub-color-fourth: #000000;
   }
 
   .top-page-message {
-    padding: 25px;
-  }
-
-  .top-page-submessage {
-    margin-top: 70px;
     padding: 25px;
   }
 
