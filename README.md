@@ -108,7 +108,7 @@ ER 図
 ---
 ### トップページ
 
-![Image from Gyazo](https://gyazo.com/57ac36869b013d3f447ed40b416336db.gif)
+![Image from Gyazo](https://gyazo.com/a33ab99e25a4e86056d7a0d46ba205df.gif)
 <br>
 - 最初にトップページへアクセスするとアプリの機能や使用方法、アプリを利用することによるメリットなどを記載<br>
 - 「今すぐ始める」ボタンを押すとアカウント登録画面へ遷移<br>
