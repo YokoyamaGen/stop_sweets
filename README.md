@@ -181,7 +181,7 @@ ER 図
 - フロント：HTML、CSS、JavaScript(jQuery)、Bootstrap
 - インフラ：AWS(EC2、RDS、Route53、ALB、VPC、S3、IAM、CloudFront、ACM）
 - ソースコード管理：Github
-- CI/CD：CircleCI
+- CI/CD：Circle　CI
 - その他：Docker
 <br>
 
